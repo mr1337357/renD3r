@@ -22,3 +22,11 @@ def getpoints():
         yield (-.5,-.5,f) #bottom left
         yield (.5,-.5,f) #bottom right
 
+cache = None
+
+def cached():
+    global cache
+    if cache == None:
+        cache = [x for x in getpoints()]
+    for x in cache:
+        yield x

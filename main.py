@@ -21,7 +21,7 @@ def drawcube(pa,angle1=0.0,angle2=0.0):
     rot2[(0,2)]=-math.sin(angle2)
     rot2[(2,2)]=math.cos(angle2)
 
-    for point in cube.getpoints():
+    for point in cube.cached():
         v = vector.vector(*point)
         v = v.transform(rot1)
         v = v.transform(rot2)
