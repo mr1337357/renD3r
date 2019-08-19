@@ -1,6 +1,6 @@
 RenD3r:
 ___
-3D renderer in python
+3D renderer in python\
 How it works:
 __
 1. generator creates a set of vectors representing a 3d object
