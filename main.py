@@ -6,9 +6,12 @@ import math
 
 screen = pygame.display.set_mode((320,240))
 
-srf = pygame.Surface(screen.get_size(),pygame.SRCALPHA,32)
+srf = pygame.Surface(screen.get_size(),0,screen)
+
+c = 0
 
 def drawcube(pa,angle1=0.0,angle2=0.0):
+    global c
     depth = {}
     rot1 = vector.matrix()
     rot1[(1,1)]=math.cos(angle1)
@@ -37,16 +40,13 @@ def drawcube(pa,angle1=0.0,angle2=0.0):
         x = int(x)
         y = int(y)
         b = 3-z
-        b = int(b*70)
+        b = int(b*100)
         if b > 255:
             b = 255
         if b < 0:
             b = 0
-        color = 0xFF000000
-        color += b
-        color += b * 256
-        color += b * 65536
-
+        
+        color = pygame.Color(b,b,b)
         try:
             if depth[(x,y)] > z:
                 pa[x,y]=color
