@@ -1,0 +1,1 @@
+#define FDIV(a,b) (int16_t)(((int32_t)a)<<14/b)
