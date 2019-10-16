@@ -1,0 +1,1768 @@
+
+3d.exe:     file format pei-x86-64
+
+
+Disassembly of section .text:
+
+0000000100401000 <WinMainCRTStartup>:
+   100401000:	48 83 ec 28          	sub    $0x28,%rsp
+   100401004:	48 8d 0d 86 04 00 00 	lea    0x486(%rip),%rcx        # 100401491 <main>
+   10040100b:	e8 40 0b 00 00       	callq  100401b50 <cygwin_crt0>
+   100401010:	45 31 c0             	xor    %r8d,%r8d
+   100401013:	31 d2                	xor    %edx,%edx
+   100401015:	31 c9                	xor    %ecx,%ecx
+   100401017:	e8 54 0b 00 00       	callq  100401b70 <cygwin_premain0>
+   10040101c:	45 31 c0             	xor    %r8d,%r8d
+   10040101f:	31 d2                	xor    %edx,%edx
+   100401021:	31 c9                	xor    %ecx,%ecx
+   100401023:	e8 58 0b 00 00       	callq  100401b80 <cygwin_premain1>
+   100401028:	45 31 c0             	xor    %r8d,%r8d
+   10040102b:	31 d2                	xor    %edx,%edx
+   10040102d:	31 c9                	xor    %ecx,%ecx
+   10040102f:	e8 5c 0b 00 00       	callq  100401b90 <cygwin_premain2>
+   100401034:	45 31 c0             	xor    %r8d,%r8d
+   100401037:	31 d2                	xor    %edx,%edx
+   100401039:	31 c9                	xor    %ecx,%ecx
+   10040103b:	48 83 c4 28          	add    $0x28,%rsp
+   10040103f:	e9 5c 0b 00 00       	jmpq   100401ba0 <cygwin_premain3>
+   100401044:	90                   	nop
+   100401045:	90                   	nop
+   100401046:	90                   	nop
+   100401047:	90                   	nop
+   100401048:	90                   	nop
+   100401049:	90                   	nop
+   10040104a:	90                   	nop
+   10040104b:	90                   	nop
+   10040104c:	90                   	nop
+   10040104d:	90                   	nop
+   10040104e:	90                   	nop
+   10040104f:	90                   	nop
+
+0000000100401050 <__gcc_register_frame>:
+   100401050:	55                   	push   %rbp
+   100401051:	48 89 e5             	mov    %rsp,%rbp
+   100401054:	4c 8d 05 a5 1f 00 00 	lea    0x1fa5(%rip),%r8        # 100403000 <__data_start__>
+   10040105b:	48 8d 0d 0e 00 00 00 	lea    0xe(%rip),%rcx        # 100401070 <__gcc_deregister_frame>
+   100401062:	31 d2                	xor    %edx,%edx
+   100401064:	5d                   	pop    %rbp
+   100401065:	e9 96 0a 00 00       	jmpq   100401b00 <__cxa_atexit>
+   10040106a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000100401070 <__gcc_deregister_frame>:
+   100401070:	55                   	push   %rbp
+   100401071:	48 89 e5             	mov    %rsp,%rbp
+   100401074:	5d                   	pop    %rbp
+   100401075:	c3                   	retq   
+   100401076:	90                   	nop
+   100401077:	90                   	nop
+   100401078:	90                   	nop
+   100401079:	90                   	nop
+   10040107a:	90                   	nop
+   10040107b:	90                   	nop
+   10040107c:	90                   	nop
+   10040107d:	90                   	nop
+   10040107e:	90                   	nop
+vector4 cube[8];
+
+matrix4x4 movecube;
+
+void move_cube()
+{
+   10040107f:	90                   	nop
+
+0000000100401080 <move_cube>:
+   100401080:	55                   	push   %rbp
+   100401081:	48 89 e5             	mov    %rsp,%rbp
+   100401084:	48 83 ec 20          	sub    $0x20,%rsp
+    matrix4x4_set(&movecube,0,0,1);
+   100401088:	f3 0f 10 1d 9c 2f 00 	movss  0x2f9c(%rip),%xmm3        # 10040402c <.rdata+0x2c>
+   10040108f:	00 
+   100401090:	41 b8 00 00 00 00    	mov    $0x0,%r8d
+   100401096:	ba 00 00 00 00       	mov    $0x0,%edx
+   10040109b:	48 8d 05 5e 71 00 00 	lea    0x715e(%rip),%rax        # 100408200 <movecube>
+   1004010a2:	48 89 c1             	mov    %rax,%rcx
+   1004010a5:	e8 09 06 00 00       	callq  1004016b3 <matrix4x4_set>
+    matrix4x4_set(&movecube,1,1,1);
+   1004010aa:	f3 0f 10 1d 7a 2f 00 	movss  0x2f7a(%rip),%xmm3        # 10040402c <.rdata+0x2c>
+   1004010b1:	00 
+   1004010b2:	41 b8 01 00 00 00    	mov    $0x1,%r8d
+   1004010b8:	ba 01 00 00 00       	mov    $0x1,%edx
+   1004010bd:	48 8d 05 3c 71 00 00 	lea    0x713c(%rip),%rax        # 100408200 <movecube>
+   1004010c4:	48 89 c1             	mov    %rax,%rcx
+   1004010c7:	e8 e7 05 00 00       	callq  1004016b3 <matrix4x4_set>
+    matrix4x4_set(&movecube,2,2,1);
+   1004010cc:	f3 0f 10 1d 58 2f 00 	movss  0x2f58(%rip),%xmm3        # 10040402c <.rdata+0x2c>
+   1004010d3:	00 
+   1004010d4:	41 b8 02 00 00 00    	mov    $0x2,%r8d
+   1004010da:	ba 02 00 00 00       	mov    $0x2,%edx
+   1004010df:	48 8d 05 1a 71 00 00 	lea    0x711a(%rip),%rax        # 100408200 <movecube>
+   1004010e6:	48 89 c1             	mov    %rax,%rcx
+   1004010e9:	e8 c5 05 00 00       	callq  1004016b3 <matrix4x4_set>
+    matrix4x4_set(&movecube,3,3,1);
+   1004010ee:	f3 0f 10 1d 36 2f 00 	movss  0x2f36(%rip),%xmm3        # 10040402c <.rdata+0x2c>
+   1004010f5:	00 
+   1004010f6:	41 b8 03 00 00 00    	mov    $0x3,%r8d
+   1004010fc:	ba 03 00 00 00       	mov    $0x3,%edx
+   100401101:	48 8d 05 f8 70 00 00 	lea    0x70f8(%rip),%rax        # 100408200 <movecube>
+   100401108:	48 89 c1             	mov    %rax,%rcx
+   10040110b:	e8 a3 05 00 00       	callq  1004016b3 <matrix4x4_set>
+    matrix4x4_set(&movecube,3,2,2.5);
+   100401110:	f3 0f 10 1d 18 2f 00 	movss  0x2f18(%rip),%xmm3        # 100404030 <.rdata+0x30>
+   100401117:	00 
+   100401118:	41 b8 02 00 00 00    	mov    $0x2,%r8d
+   10040111e:	ba 03 00 00 00       	mov    $0x3,%edx
+   100401123:	48 8d 05 d6 70 00 00 	lea    0x70d6(%rip),%rax        # 100408200 <movecube>
+   10040112a:	48 89 c1             	mov    %rax,%rcx
+   10040112d:	e8 81 05 00 00       	callq  1004016b3 <matrix4x4_set>
+}
+   100401132:	90                   	nop
+   100401133:	48 83 c4 20          	add    $0x20,%rsp
+   100401137:	5d                   	pop    %rbp
+   100401138:	c3                   	retq   
+
+0000000100401139 <make_cube>:
+
+void make_cube(vector4 *cube)
+{
+   100401139:	55                   	push   %rbp
+   10040113a:	48 89 e5             	mov    %rsp,%rbp
+   10040113d:	48 83 ec 40          	sub    $0x40,%rsp
+   100401141:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+    int i;
+    float x = -.5;
+   100401145:	f3 0f 10 05 e7 2e 00 	movss  0x2ee7(%rip),%xmm0        # 100404034 <.rdata+0x34>
+   10040114c:	00 
+   10040114d:	f3 0f 11 45 f8       	movss  %xmm0,-0x8(%rbp)
+    float y = -.5; 
+   100401152:	f3 0f 10 05 da 2e 00 	movss  0x2eda(%rip),%xmm0        # 100404034 <.rdata+0x34>
+   100401159:	00 
+   10040115a:	f3 0f 11 45 f4       	movss  %xmm0,-0xc(%rbp)
+    float z = -.5;
+   10040115f:	f3 0f 10 05 cd 2e 00 	movss  0x2ecd(%rip),%xmm0        # 100404034 <.rdata+0x34>
+   100401166:	00 
+   100401167:	f3 0f 11 45 f0       	movss  %xmm0,-0x10(%rbp)
+    float w = 1.0;
+   10040116c:	f3 0f 10 05 b8 2e 00 	movss  0x2eb8(%rip),%xmm0        # 10040402c <.rdata+0x2c>
+   100401173:	00 
+   100401174:	f3 0f 11 45 ec       	movss  %xmm0,-0x14(%rbp)
+    for(i=0;i<8;i++)
+   100401179:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   100401180:	e9 dc 00 00 00       	jmpq   100401261 <make_cube+0x128>
+    {
+        vector4_setx(&cube[i],x+!!(i&1));
+   100401185:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   100401188:	83 e0 01             	and    $0x1,%eax
+   10040118b:	85 c0                	test   %eax,%eax
+   10040118d:	74 0a                	je     100401199 <make_cube+0x60>
+   10040118f:	f3 0f 10 05 95 2e 00 	movss  0x2e95(%rip),%xmm0        # 10040402c <.rdata+0x2c>
+   100401196:	00 
+   100401197:	eb 04                	jmp    10040119d <make_cube+0x64>
+   100401199:	66 0f ef c0          	pxor   %xmm0,%xmm0
+   10040119d:	f3 0f 58 45 f8       	addss  -0x8(%rbp),%xmm0
+   1004011a2:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   1004011a5:	48 98                	cltq   
+   1004011a7:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+   1004011ae:	00 
+   1004011af:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004011b3:	48 01 d0             	add    %rdx,%rax
+   1004011b6:	0f 28 c8             	movaps %xmm0,%xmm1
+   1004011b9:	48 89 c1             	mov    %rax,%rcx
+   1004011bc:	e8 0f 04 00 00       	callq  1004015d0 <vector4_setx>
+        vector4_sety(&cube[i],y+!!(i&2));
+   1004011c1:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   1004011c4:	83 e0 02             	and    $0x2,%eax
+   1004011c7:	85 c0                	test   %eax,%eax
+   1004011c9:	74 0a                	je     1004011d5 <make_cube+0x9c>
+   1004011cb:	f3 0f 10 05 59 2e 00 	movss  0x2e59(%rip),%xmm0        # 10040402c <.rdata+0x2c>
+   1004011d2:	00 
+   1004011d3:	eb 04                	jmp    1004011d9 <make_cube+0xa0>
+   1004011d5:	66 0f ef c0          	pxor   %xmm0,%xmm0
+   1004011d9:	f3 0f 58 45 f4       	addss  -0xc(%rbp),%xmm0
+   1004011de:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   1004011e1:	48 98                	cltq   
+   1004011e3:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+   1004011ea:	00 
+   1004011eb:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004011ef:	48 01 d0             	add    %rdx,%rax
+   1004011f2:	0f 28 c8             	movaps %xmm0,%xmm1
+   1004011f5:	48 89 c1             	mov    %rax,%rcx
+   1004011f8:	e8 0b 04 00 00       	callq  100401608 <vector4_sety>
+        vector4_setz(&cube[i],z+!!(i&4));
+   1004011fd:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   100401200:	83 e0 04             	and    $0x4,%eax
+   100401203:	85 c0                	test   %eax,%eax
+   100401205:	74 0a                	je     100401211 <make_cube+0xd8>
+   100401207:	f3 0f 10 05 1d 2e 00 	movss  0x2e1d(%rip),%xmm0        # 10040402c <.rdata+0x2c>
+   10040120e:	00 
+   10040120f:	eb 04                	jmp    100401215 <make_cube+0xdc>
+   100401211:	66 0f ef c0          	pxor   %xmm0,%xmm0
+   100401215:	f3 0f 58 45 f0       	addss  -0x10(%rbp),%xmm0
+   10040121a:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   10040121d:	48 98                	cltq   
+   10040121f:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+   100401226:	00 
+   100401227:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   10040122b:	48 01 d0             	add    %rdx,%rax
+   10040122e:	0f 28 c8             	movaps %xmm0,%xmm1
+   100401231:	48 89 c1             	mov    %rax,%rcx
+   100401234:	e8 08 04 00 00       	callq  100401641 <vector4_setz>
+        vector4_setw(&cube[i],w);
+   100401239:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   10040123c:	48 98                	cltq   
+   10040123e:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+   100401245:	00 
+   100401246:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   10040124a:	48 01 d0             	add    %rdx,%rax
+   10040124d:	f3 0f 10 45 ec       	movss  -0x14(%rbp),%xmm0
+   100401252:	0f 28 c8             	movaps %xmm0,%xmm1
+   100401255:	48 89 c1             	mov    %rax,%rcx
+   100401258:	e8 1d 04 00 00       	callq  10040167a <vector4_setw>
+    for(i=0;i<8;i++)
+   10040125d:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+   100401261:	83 7d fc 07          	cmpl   $0x7,-0x4(%rbp)
+   100401265:	0f 8e 1a ff ff ff    	jle    100401185 <make_cube+0x4c>
+    }
+}
+   10040126b:	90                   	nop
+   10040126c:	48 83 c4 40          	add    $0x40,%rsp
+   100401270:	5d                   	pop    %rbp
+   100401271:	c3                   	retq   
+
+0000000100401272 <setcolor>:
+
+void setcolor(char color,char r,char g,char b)
+{
+   100401272:	55                   	push   %rbp
+   100401273:	48 89 e5             	mov    %rsp,%rbp
+   100401276:	89 d0                	mov    %edx,%eax
+   100401278:	45 89 c2             	mov    %r8d,%r10d
+   10040127b:	45 89 c8             	mov    %r9d,%r8d
+   10040127e:	89 ca                	mov    %ecx,%edx
+   100401280:	88 55 10             	mov    %dl,0x10(%rbp)
+   100401283:	88 45 18             	mov    %al,0x18(%rbp)
+   100401286:	44 89 d0             	mov    %r10d,%eax
+   100401289:	88 45 20             	mov    %al,0x20(%rbp)
+   10040128c:	44 89 c0             	mov    %r8d,%eax
+   10040128f:	88 45 28             	mov    %al,0x28(%rbp)
+    colormap[color][0]=r;
+   100401292:	0f be 45 10          	movsbl 0x10(%rbp),%eax
+   100401296:	48 8d 0d 03 6f 00 00 	lea    0x6f03(%rip),%rcx        # 1004081a0 <colormap>
+   10040129d:	48 63 d0             	movslq %eax,%rdx
+   1004012a0:	48 89 d0             	mov    %rdx,%rax
+   1004012a3:	48 01 c0             	add    %rax,%rax
+   1004012a6:	48 01 d0             	add    %rdx,%rax
+   1004012a9:	48 8d 14 01          	lea    (%rcx,%rax,1),%rdx
+   1004012ad:	0f b6 45 18          	movzbl 0x18(%rbp),%eax
+   1004012b1:	88 02                	mov    %al,(%rdx)
+    colormap[color][1]=g;
+   1004012b3:	0f be 45 10          	movsbl 0x10(%rbp),%eax
+   1004012b7:	48 8d 0d e2 6e 00 00 	lea    0x6ee2(%rip),%rcx        # 1004081a0 <colormap>
+   1004012be:	48 63 d0             	movslq %eax,%rdx
+   1004012c1:	48 89 d0             	mov    %rdx,%rax
+   1004012c4:	48 01 c0             	add    %rax,%rax
+   1004012c7:	48 01 d0             	add    %rdx,%rax
+   1004012ca:	48 01 c8             	add    %rcx,%rax
+   1004012cd:	48 8d 50 01          	lea    0x1(%rax),%rdx
+   1004012d1:	0f b6 45 20          	movzbl 0x20(%rbp),%eax
+   1004012d5:	88 02                	mov    %al,(%rdx)
+    colormap[color][2]=b;
+   1004012d7:	0f be 45 10          	movsbl 0x10(%rbp),%eax
+   1004012db:	48 8d 0d be 6e 00 00 	lea    0x6ebe(%rip),%rcx        # 1004081a0 <colormap>
+   1004012e2:	48 63 d0             	movslq %eax,%rdx
+   1004012e5:	48 89 d0             	mov    %rdx,%rax
+   1004012e8:	48 01 c0             	add    %rax,%rax
+   1004012eb:	48 01 d0             	add    %rdx,%rax
+   1004012ee:	48 01 c8             	add    %rcx,%rax
+   1004012f1:	48 8d 50 02          	lea    0x2(%rax),%rdx
+   1004012f5:	0f b6 45 28          	movzbl 0x28(%rbp),%eax
+   1004012f9:	88 02                	mov    %al,(%rdx)
+}
+   1004012fb:	90                   	nop
+   1004012fc:	5d                   	pop    %rbp
+   1004012fd:	c3                   	retq   
+
+00000001004012fe <make_colors>:
+
+void make_colors()
+{
+   1004012fe:	55                   	push   %rbp
+   1004012ff:	48 89 e5             	mov    %rsp,%rbp
+   100401302:	48 83 ec 30          	sub    $0x30,%rsp
+    int i;
+    for(i=0;i<8;i++)
+   100401306:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   10040130d:	eb 33                	jmp    100401342 <make_colors+0x44>
+    {
+        setcolor(i,16*i,16*i,16*i);
+   10040130f:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   100401312:	c1 e0 04             	shl    $0x4,%eax
+   100401315:	44 0f be c0          	movsbl %al,%r8d
+   100401319:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   10040131c:	c1 e0 04             	shl    $0x4,%eax
+   10040131f:	0f be c8             	movsbl %al,%ecx
+   100401322:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   100401325:	c1 e0 04             	shl    $0x4,%eax
+   100401328:	0f be d0             	movsbl %al,%edx
+   10040132b:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   10040132e:	0f be c0             	movsbl %al,%eax
+   100401331:	45 89 c1             	mov    %r8d,%r9d
+   100401334:	41 89 c8             	mov    %ecx,%r8d
+   100401337:	89 c1                	mov    %eax,%ecx
+   100401339:	e8 34 ff ff ff       	callq  100401272 <setcolor>
+    for(i=0;i<8;i++)
+   10040133e:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+   100401342:	83 7d fc 07          	cmpl   $0x7,-0x4(%rbp)
+   100401346:	7e c7                	jle    10040130f <make_colors+0x11>
+    }
+}
+   100401348:	90                   	nop
+   100401349:	48 83 c4 30          	add    $0x30,%rsp
+   10040134d:	5d                   	pop    %rbp
+   10040134e:	c3                   	retq   
+
+000000010040134f <drawpixel>:
+
+void drawpixel(unsigned char *pxbuf,int x, int y,char color,int pitch)
+{
+   10040134f:	55                   	push   %rbp
+   100401350:	48 89 e5             	mov    %rsp,%rbp
+   100401353:	48 83 ec 10          	sub    $0x10,%rsp
+   100401357:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+   10040135b:	89 55 18             	mov    %edx,0x18(%rbp)
+   10040135e:	44 89 45 20          	mov    %r8d,0x20(%rbp)
+   100401362:	44 89 c8             	mov    %r9d,%eax
+   100401365:	88 45 28             	mov    %al,0x28(%rbp)
+    int i;
+    int offset;
+    if(color<0)
+   100401368:	80 7d 28 00          	cmpb   $0x0,0x28(%rbp)
+   10040136c:	78 61                	js     1004013cf <drawpixel+0x80>
+    {
+        return;
+    }
+    offset = y * pitch + x * 4;
+   10040136e:	8b 45 20             	mov    0x20(%rbp),%eax
+   100401371:	0f af 45 30          	imul   0x30(%rbp),%eax
+   100401375:	8b 55 18             	mov    0x18(%rbp),%edx
+   100401378:	c1 e2 02             	shl    $0x2,%edx
+   10040137b:	01 d0                	add    %edx,%eax
+   10040137d:	89 45 f8             	mov    %eax,-0x8(%rbp)
+    for(i=0;i<3;i++)
+   100401380:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   100401387:	eb 3e                	jmp    1004013c7 <drawpixel+0x78>
+    {
+        pxbuf[offset+i]=colormap[color][i];
+   100401389:	0f be 45 28          	movsbl 0x28(%rbp),%eax
+   10040138d:	4c 8d 05 0c 6e 00 00 	lea    0x6e0c(%rip),%r8        # 1004081a0 <colormap>
+   100401394:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   100401397:	48 63 ca             	movslq %edx,%rcx
+   10040139a:	48 63 d0             	movslq %eax,%rdx
+   10040139d:	48 89 d0             	mov    %rdx,%rax
+   1004013a0:	48 01 c0             	add    %rax,%rax
+   1004013a3:	48 01 d0             	add    %rdx,%rax
+   1004013a6:	4c 01 c0             	add    %r8,%rax
+   1004013a9:	48 01 c8             	add    %rcx,%rax
+   1004013ac:	0f b6 10             	movzbl (%rax),%edx
+   1004013af:	8b 4d f8             	mov    -0x8(%rbp),%ecx
+   1004013b2:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   1004013b5:	01 c8                	add    %ecx,%eax
+   1004013b7:	48 63 c8             	movslq %eax,%rcx
+   1004013ba:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004013be:	48 01 c8             	add    %rcx,%rax
+   1004013c1:	88 10                	mov    %dl,(%rax)
+    for(i=0;i<3;i++)
+   1004013c3:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+   1004013c7:	83 7d fc 02          	cmpl   $0x2,-0x4(%rbp)
+   1004013cb:	7e bc                	jle    100401389 <drawpixel+0x3a>
+   1004013cd:	eb 01                	jmp    1004013d0 <drawpixel+0x81>
+        return;
+   1004013cf:	90                   	nop
+    }
+}
+   1004013d0:	48 83 c4 10          	add    $0x10,%rsp
+   1004013d4:	5d                   	pop    %rbp
+   1004013d5:	c3                   	retq   
+
+00000001004013d6 <draw>:
+
+void draw(unsigned char *pxbuf,int pitch)
+{
+   1004013d6:	55                   	push   %rbp
+   1004013d7:	48 89 e5             	mov    %rsp,%rbp
+   1004013da:	48 83 ec 50          	sub    $0x50,%rsp
+   1004013de:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+   1004013e2:	89 55 18             	mov    %edx,0x18(%rbp)
+    vector4 n;
+    int i;
+    int x;
+    int y;
+    for(i=0;i<8;i++)
+   1004013e5:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   1004013ec:	e9 8f 00 00 00       	jmpq   100401480 <draw+0xaa>
+    {
+
+        transform(&movecube,&cube[i],&n);
+   1004013f1:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   1004013f4:	48 98                	cltq   
+   1004013f6:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+   1004013fd:	00 
+   1004013fe:	48 8d 05 bb 6d 00 00 	lea    0x6dbb(%rip),%rax        # 1004081c0 <cube>
+   100401405:	48 01 d0             	add    %rdx,%rax
+   100401408:	48 8d 55 ec          	lea    -0x14(%rbp),%rdx
+   10040140c:	49 89 d0             	mov    %rdx,%r8
+   10040140f:	48 89 c2             	mov    %rax,%rdx
+   100401412:	48 8d 05 e7 6d 00 00 	lea    0x6de7(%rip),%rax        # 100408200 <movecube>
+   100401419:	48 89 c1             	mov    %rax,%rcx
+   10040141c:	e8 3b 03 00 00       	callq  10040175c <transform>
+        printf("%d\n",n->x);
+   100401421:	48 8d 45 ec          	lea    -0x14(%rbp),%rax
+   100401425:	48 89 c1             	mov    %rax,%rcx
+   100401428:	e8 8e 04 00 00       	callq  1004018bb <project>
+        project(&n);
+   10040142d:	0f b7 45 ec          	movzwl -0x14(%rbp),%eax
+   100401431:	98                   	cwtl   
+   100401432:	8d 50 01             	lea    0x1(%rax),%edx
+   100401435:	89 d0                	mov    %edx,%eax
+   100401437:	c1 e0 02             	shl    $0x2,%eax
+   10040143a:	01 d0                	add    %edx,%eax
+   10040143c:	c1 e0 06             	shl    $0x6,%eax
+   10040143f:	89 45 f8             	mov    %eax,-0x8(%rbp)
+        x = n.x*320+320;
+   100401442:	0f b7 45 ee          	movzwl -0x12(%rbp),%eax
+   100401446:	0f bf d0             	movswl %ax,%edx
+   100401449:	89 d0                	mov    %edx,%eax
+   10040144b:	c1 e2 04             	shl    $0x4,%edx
+   10040144e:	29 d0                	sub    %edx,%eax
+   100401450:	c1 e0 04             	shl    $0x4,%eax
+   100401453:	05 f0 00 00 00       	add    $0xf0,%eax
+   100401458:	89 45 f4             	mov    %eax,-0xc(%rbp)
+        y = 240-n.y*240;
+   10040145b:	8b 4d f4             	mov    -0xc(%rbp),%ecx
+   10040145e:	8b 45 f8             	mov    -0x8(%rbp),%eax
+   100401461:	8b 55 18             	mov    0x18(%rbp),%edx
+   100401464:	89 54 24 20          	mov    %edx,0x20(%rsp)
+   100401468:	41 b9 07 00 00 00    	mov    $0x7,%r9d
+   10040146e:	41 89 c8             	mov    %ecx,%r8d
+   100401471:	89 c2                	mov    %eax,%edx
+   100401473:	48 8b 4d 10          	mov    0x10(%rbp),%rcx
+   100401477:	e8 d3 fe ff ff       	callq  10040134f <drawpixel>
+    for(i=0;i<8;i++)
+   10040147c:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+   100401480:	83 7d fc 07          	cmpl   $0x7,-0x4(%rbp)
+   100401484:	0f 8e 67 ff ff ff    	jle    1004013f1 <draw+0x1b>
+        drawpixel(pxbuf,x,y,7,pitch);
+    }
+    //drawpixel(pxbuf,5,5,1,pitch);
+    //drawpixel(pxbuf,5,6,1,pitch);
+    //drawpixel(pxbuf,6,5,1,pitch);
+    //drawpixel(pxbuf,6,6,1,pitch);
+   10040148a:	90                   	nop
+   10040148b:	48 83 c4 50          	add    $0x50,%rsp
+   10040148f:	5d                   	pop    %rbp
+   100401490:	c3                   	retq   
+
+0000000100401491 <main>:
+}
+
+   100401491:	55                   	push   %rbp
+   100401492:	48 89 e5             	mov    %rsp,%rbp
+   100401495:	48 83 c4 80          	add    $0xffffffffffffff80,%rsp
+   100401499:	89 4d 10             	mov    %ecx,0x10(%rbp)
+   10040149c:	48 89 55 18          	mov    %rdx,0x18(%rbp)
+   1004014a0:	e8 6b 06 00 00       	callq  100401b10 <__main>
+
+    SDL_Window *window;                    // Declare a pointer
+    SDL_Surface *surface;
+    
+    SDL_Event e;
+
+   1004014a5:	b9 20 00 00 00       	mov    $0x20,%ecx
+   1004014aa:	e8 21 06 00 00       	callq  100401ad0 <SDL_Init>
+    SDL_Init(SDL_INIT_VIDEO);              // Initialize SDL2
+
+    // Create an application window with the following settings:
+   1004014af:	c7 44 24 28 02 00 00 	movl   $0x2,0x28(%rsp)
+   1004014b6:	00 
+   1004014b7:	c7 44 24 20 e0 01 00 	movl   $0x1e0,0x20(%rsp)
+   1004014be:	00 
+   1004014bf:	41 b9 80 02 00 00    	mov    $0x280,%r9d
+   1004014c5:	41 b8 00 00 ff 1f    	mov    $0x1fff0000,%r8d
+   1004014cb:	ba 00 00 ff 1f       	mov    $0x1fff0000,%edx
+   1004014d0:	48 8d 0d 29 2b 00 00 	lea    0x2b29(%rip),%rcx        # 100404000 <.rdata>
+   1004014d7:	e8 1c 06 00 00       	callq  100401af8 <SDL_CreateWindow>
+   1004014dc:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+        640,                               // width, in pixels
+        480,                               // height, in pixels
+        SDL_WINDOW_OPENGL                  // flags - see below
+    );
+
+    // Check that the window was successfully created
+   1004014e0:	48 83 7d f8 00       	cmpq   $0x0,-0x8(%rbp)
+   1004014e5:	75 1e                	jne    100401505 <main+0x74>
+    if (window == NULL) {
+        // In the case that the window could not be made...
+   1004014e7:	e8 f4 05 00 00       	callq  100401ae0 <SDL_GetError>
+   1004014ec:	48 89 c2             	mov    %rax,%rdx
+   1004014ef:	48 8d 0d 19 2b 00 00 	lea    0x2b19(%rip),%rcx        # 10040400f <.rdata+0xf>
+   1004014f6:	e8 25 06 00 00       	callq  100401b20 <printf>
+        printf("Could not create window: %s\n", SDL_GetError());
+   1004014fb:	b8 01 00 00 00       	mov    $0x1,%eax
+   100401500:	e9 b6 00 00 00       	jmpq   1004015bb <main+0x12a>
+        return 1;
+    }
+
+   100401505:	e8 f4 fd ff ff       	callq  1004012fe <make_colors>
+    make_colors();
+   10040150a:	48 8d 05 af 6c 00 00 	lea    0x6caf(%rip),%rax        # 1004081c0 <cube>
+   100401511:	48 89 c1             	mov    %rax,%rcx
+   100401514:	e8 20 fc ff ff       	callq  100401139 <make_cube>
+    make_cube(cube);
+   100401519:	e8 62 fb ff ff       	callq  100401080 <move_cube>
+    move_cube();
+
+   10040151e:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+   100401522:	48 89 c1             	mov    %rax,%rcx
+   100401525:	e8 ae 05 00 00       	callq  100401ad8 <SDL_GetWindowSurface>
+   10040152a:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+    surface = SDL_GetWindowSurface( window );
+
+    while(1)
+    {
+   10040152e:	48 8d 45 b0          	lea    -0x50(%rbp),%rax
+   100401532:	48 89 c1             	mov    %rax,%rcx
+   100401535:	e8 86 05 00 00       	callq  100401ac0 <SDL_PollEvent>
+   10040153a:	85 c0                	test   %eax,%eax
+   10040153c:	74 0a                	je     100401548 <main+0xb7>
+        if(SDL_PollEvent(&e))
+        {
+   10040153e:	8b 45 b0             	mov    -0x50(%rbp),%eax
+   100401541:	3d 00 01 00 00       	cmp    $0x100,%eax
+   100401546:	74 5c                	je     1004015a4 <main+0x113>
+            if(e.type == SDL_QUIT)
+            {
+                break;
+            }
+        }
+        //Fill the surface white
+   100401548:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+   10040154c:	48 8b 40 08          	mov    0x8(%rax),%rax
+   100401550:	41 b9 00 00 00 00    	mov    $0x0,%r9d
+   100401556:	41 b8 00 00 00 00    	mov    $0x0,%r8d
+   10040155c:	ba 00 00 00 00       	mov    $0x0,%edx
+   100401561:	48 89 c1             	mov    %rax,%rcx
+   100401564:	e8 5f 05 00 00       	callq  100401ac8 <SDL_MapRGB>
+   100401569:	89 c2                	mov    %eax,%edx
+   10040156b:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+   10040156f:	41 89 d0             	mov    %edx,%r8d
+   100401572:	ba 00 00 00 00       	mov    $0x0,%edx
+   100401577:	48 89 c1             	mov    %rax,%rcx
+   10040157a:	e8 69 05 00 00       	callq  100401ae8 <SDL_FillRect>
+        SDL_FillRect( surface, NULL, SDL_MapRGB( surface->format, 0, 0, 0 ) );
+   10040157f:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+   100401583:	8b 50 18             	mov    0x18(%rax),%edx
+   100401586:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+   10040158a:	48 8b 40 20          	mov    0x20(%rax),%rax
+   10040158e:	48 89 c1             	mov    %rax,%rcx
+   100401591:	e8 40 fe ff ff       	callq  1004013d6 <draw>
+        draw(surface->pixels,surface->pitch);
+        
+        //Update the surface
+   100401596:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+   10040159a:	48 89 c1             	mov    %rax,%rcx
+   10040159d:	e8 0e 05 00 00       	callq  100401ab0 <SDL_UpdateWindowSurface>
+    {
+   1004015a2:	eb 8a                	jmp    10040152e <main+0x9d>
+            {
+   1004015a4:	90                   	nop
+        SDL_UpdateWindowSurface( window );
+    }
+
+    // Close and destroy the window
+   1004015a5:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+   1004015a9:	48 89 c1             	mov    %rax,%rcx
+   1004015ac:	e8 3f 05 00 00       	callq  100401af0 <SDL_DestroyWindow>
+    SDL_DestroyWindow(window);
+
+    // Clean up
+   1004015b1:	e8 02 05 00 00       	callq  100401ab8 <SDL_Quit>
+    SDL_Quit();
+   1004015b6:	b8 00 00 00 00       	mov    $0x0,%eax
+    return 0;
+   1004015bb:	48 83 ec 80          	sub    $0xffffffffffffff80,%rsp
+   1004015bf:	5d                   	pop    %rbp
+   1004015c0:	c3                   	retq   
+   1004015c1:	90                   	nop
+   1004015c2:	90                   	nop
+   1004015c3:	90                   	nop
+   1004015c4:	90                   	nop
+   1004015c5:	90                   	nop
+   1004015c6:	90                   	nop
+   1004015c7:	90                   	nop
+   1004015c8:	90                   	nop
+   1004015c9:	90                   	nop
+   1004015ca:	90                   	nop
+   1004015cb:	90                   	nop
+   1004015cc:	90                   	nop
+   1004015cd:	90                   	nop
+   1004015ce:	90                   	nop
+#ifdef FIXED
+
+#include "fixed.h"
+
+void vector4_setx(vector4 *v,float f)
+{
+   1004015cf:	90                   	nop
+
+00000001004015d0 <vector4_setx>:
+   1004015d0:	55                   	push   %rbp
+   1004015d1:	48 89 e5             	mov    %rsp,%rbp
+   1004015d4:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+   1004015d8:	f3 0f 11 4d 18       	movss  %xmm1,0x18(%rbp)
+    f*=16384;
+   1004015dd:	f3 0f 10 4d 18       	movss  0x18(%rbp),%xmm1
+   1004015e2:	f3 0f 10 05 7e 2a 00 	movss  0x2a7e(%rip),%xmm0        # 100404068 <.rdata+0x28>
+   1004015e9:	00 
+   1004015ea:	f3 0f 59 c1          	mulss  %xmm1,%xmm0
+   1004015ee:	f3 0f 11 45 18       	movss  %xmm0,0x18(%rbp)
+    v->x = f;
+   1004015f3:	f3 0f 10 45 18       	movss  0x18(%rbp),%xmm0
+   1004015f8:	f3 0f 2c c0          	cvttss2si %xmm0,%eax
+   1004015fc:	89 c2                	mov    %eax,%edx
+   1004015fe:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   100401602:	66 89 10             	mov    %dx,(%rax)
+}
+   100401605:	90                   	nop
+   100401606:	5d                   	pop    %rbp
+   100401607:	c3                   	retq   
+
+0000000100401608 <vector4_sety>:
+
+void vector4_sety(vector4 *v,float f)
+{
+   100401608:	55                   	push   %rbp
+   100401609:	48 89 e5             	mov    %rsp,%rbp
+   10040160c:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+   100401610:	f3 0f 11 4d 18       	movss  %xmm1,0x18(%rbp)
+    f*=16384;
+   100401615:	f3 0f 10 4d 18       	movss  0x18(%rbp),%xmm1
+   10040161a:	f3 0f 10 05 46 2a 00 	movss  0x2a46(%rip),%xmm0        # 100404068 <.rdata+0x28>
+   100401621:	00 
+   100401622:	f3 0f 59 c1          	mulss  %xmm1,%xmm0
+   100401626:	f3 0f 11 45 18       	movss  %xmm0,0x18(%rbp)
+    v->y = f;
+   10040162b:	f3 0f 10 45 18       	movss  0x18(%rbp),%xmm0
+   100401630:	f3 0f 2c c0          	cvttss2si %xmm0,%eax
+   100401634:	89 c2                	mov    %eax,%edx
+   100401636:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   10040163a:	66 89 50 02          	mov    %dx,0x2(%rax)
+}
+   10040163e:	90                   	nop
+   10040163f:	5d                   	pop    %rbp
+   100401640:	c3                   	retq   
+
+0000000100401641 <vector4_setz>:
+
+void vector4_setz(vector4 *v,float f)
+{
+   100401641:	55                   	push   %rbp
+   100401642:	48 89 e5             	mov    %rsp,%rbp
+   100401645:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+   100401649:	f3 0f 11 4d 18       	movss  %xmm1,0x18(%rbp)
+    f*=16384;
+   10040164e:	f3 0f 10 4d 18       	movss  0x18(%rbp),%xmm1
+   100401653:	f3 0f 10 05 0d 2a 00 	movss  0x2a0d(%rip),%xmm0        # 100404068 <.rdata+0x28>
+   10040165a:	00 
+   10040165b:	f3 0f 59 c1          	mulss  %xmm1,%xmm0
+   10040165f:	f3 0f 11 45 18       	movss  %xmm0,0x18(%rbp)
+    v->z = f;
+   100401664:	f3 0f 10 45 18       	movss  0x18(%rbp),%xmm0
+   100401669:	f3 0f 2c c0          	cvttss2si %xmm0,%eax
+   10040166d:	89 c2                	mov    %eax,%edx
+   10040166f:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   100401673:	66 89 50 04          	mov    %dx,0x4(%rax)
+}
+   100401677:	90                   	nop
+   100401678:	5d                   	pop    %rbp
+   100401679:	c3                   	retq   
+
+000000010040167a <vector4_setw>:
+
+void vector4_setw(vector4 *v,float f)
+{
+   10040167a:	55                   	push   %rbp
+   10040167b:	48 89 e5             	mov    %rsp,%rbp
+   10040167e:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+   100401682:	f3 0f 11 4d 18       	movss  %xmm1,0x18(%rbp)
+    f*=16384;
+   100401687:	f3 0f 10 4d 18       	movss  0x18(%rbp),%xmm1
+   10040168c:	f3 0f 10 05 d4 29 00 	movss  0x29d4(%rip),%xmm0        # 100404068 <.rdata+0x28>
+   100401693:	00 
+   100401694:	f3 0f 59 c1          	mulss  %xmm1,%xmm0
+   100401698:	f3 0f 11 45 18       	movss  %xmm0,0x18(%rbp)
+    v->w = f;
+   10040169d:	f3 0f 10 45 18       	movss  0x18(%rbp),%xmm0
+   1004016a2:	f3 0f 2c c0          	cvttss2si %xmm0,%eax
+   1004016a6:	89 c2                	mov    %eax,%edx
+   1004016a8:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004016ac:	66 89 50 06          	mov    %dx,0x6(%rax)
+}
+   1004016b0:	90                   	nop
+   1004016b1:	5d                   	pop    %rbp
+   1004016b2:	c3                   	retq   
+
+00000001004016b3 <matrix4x4_set>:
+
+void matrix4x4_set(matrix4x4 *m,int i, int j,float f)
+{
+   1004016b3:	55                   	push   %rbp
+   1004016b4:	48 89 e5             	mov    %rsp,%rbp
+   1004016b7:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+   1004016bb:	89 55 18             	mov    %edx,0x18(%rbp)
+   1004016be:	44 89 45 20          	mov    %r8d,0x20(%rbp)
+   1004016c2:	f3 0f 11 5d 28       	movss  %xmm3,0x28(%rbp)
+    f *= 16384;
+   1004016c7:	f3 0f 10 4d 28       	movss  0x28(%rbp),%xmm1
+   1004016cc:	f3 0f 10 05 94 29 00 	movss  0x2994(%rip),%xmm0        # 100404068 <.rdata+0x28>
+   1004016d3:	00 
+   1004016d4:	f3 0f 59 c1          	mulss  %xmm1,%xmm0
+   1004016d8:	f3 0f 11 45 28       	movss  %xmm0,0x28(%rbp)
+    if(j==0)
+   1004016dd:	83 7d 20 00          	cmpl   $0x0,0x20(%rbp)
+   1004016e1:	75 19                	jne    1004016fc <matrix4x4_set+0x49>
+    {
+        m->x[i]=f;
+   1004016e3:	f3 0f 10 45 28       	movss  0x28(%rbp),%xmm0
+   1004016e8:	f3 0f 2c c0          	cvttss2si %xmm0,%eax
+   1004016ec:	89 c1                	mov    %eax,%ecx
+   1004016ee:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004016f2:	8b 55 18             	mov    0x18(%rbp),%edx
+   1004016f5:	48 63 d2             	movslq %edx,%rdx
+   1004016f8:	66 89 0c 50          	mov    %cx,(%rax,%rdx,2)
+    }
+    if(j==1)
+   1004016fc:	83 7d 20 01          	cmpl   $0x1,0x20(%rbp)
+   100401700:	75 19                	jne    10040171b <matrix4x4_set+0x68>
+    {
+        m->x[i]=f;
+   100401702:	f3 0f 10 45 28       	movss  0x28(%rbp),%xmm0
+   100401707:	f3 0f 2c c0          	cvttss2si %xmm0,%eax
+   10040170b:	89 c1                	mov    %eax,%ecx
+   10040170d:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   100401711:	8b 55 18             	mov    0x18(%rbp),%edx
+   100401714:	48 63 d2             	movslq %edx,%rdx
+   100401717:	66 89 0c 50          	mov    %cx,(%rax,%rdx,2)
+    }
+    if(j==2)
+   10040171b:	83 7d 20 02          	cmpl   $0x2,0x20(%rbp)
+   10040171f:	75 19                	jne    10040173a <matrix4x4_set+0x87>
+    {
+        m->x[i]=f;
+   100401721:	f3 0f 10 45 28       	movss  0x28(%rbp),%xmm0
+   100401726:	f3 0f 2c c0          	cvttss2si %xmm0,%eax
+   10040172a:	89 c1                	mov    %eax,%ecx
+   10040172c:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   100401730:	8b 55 18             	mov    0x18(%rbp),%edx
+   100401733:	48 63 d2             	movslq %edx,%rdx
+   100401736:	66 89 0c 50          	mov    %cx,(%rax,%rdx,2)
+    }
+    if(j==3)
+   10040173a:	83 7d 20 03          	cmpl   $0x3,0x20(%rbp)
+   10040173e:	75 19                	jne    100401759 <matrix4x4_set+0xa6>
+    {
+        m->x[i]=f;
+   100401740:	f3 0f 10 45 28       	movss  0x28(%rbp),%xmm0
+   100401745:	f3 0f 2c c0          	cvttss2si %xmm0,%eax
+   100401749:	89 c1                	mov    %eax,%ecx
+   10040174b:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   10040174f:	8b 55 18             	mov    0x18(%rbp),%edx
+   100401752:	48 63 d2             	movslq %edx,%rdx
+   100401755:	66 89 0c 50          	mov    %cx,(%rax,%rdx,2)
+    }
+}
+   100401759:	90                   	nop
+   10040175a:	5d                   	pop    %rbp
+   10040175b:	c3                   	retq   
+
+000000010040175c <transform>:
+
+vector4 *transform(matrix4x4 *m,vector4 *vin,vector4 *vout)
+{
+   10040175c:	55                   	push   %rbp
+   10040175d:	48 89 e5             	mov    %rsp,%rbp
+   100401760:	48 83 ec 10          	sub    $0x10,%rsp
+   100401764:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+   100401768:	48 89 55 18          	mov    %rdx,0x18(%rbp)
+   10040176c:	4c 89 45 20          	mov    %r8,0x20(%rbp)
+    int i;
+    vout->x = 0;
+   100401770:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   100401774:	66 c7 00 00 00       	movw   $0x0,(%rax)
+    vout->y = 0;
+   100401779:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   10040177d:	66 c7 40 02 00 00    	movw   $0x0,0x2(%rax)
+    vout->z = 0;
+   100401783:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   100401787:	66 c7 40 04 00 00    	movw   $0x0,0x4(%rax)
+    vout->w = 0;
+   10040178d:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   100401791:	66 c7 40 06 00 00    	movw   $0x0,0x6(%rax)
+    for(i=0;i<4;i++)
+   100401797:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   10040179e:	e9 04 01 00 00       	jmpq   1004018a7 <transform+0x14b>
+    {
+        vout->x += FMUL(vin->v[i],m->x[i]);
+   1004017a3:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   1004017a7:	0f b7 00             	movzwl (%rax),%eax
+   1004017aa:	41 89 c0             	mov    %eax,%r8d
+   1004017ad:	48 8b 45 18          	mov    0x18(%rbp),%rax
+   1004017b1:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   1004017b4:	48 63 d2             	movslq %edx,%rdx
+   1004017b7:	0f b7 04 50          	movzwl (%rax,%rdx,2),%eax
+   1004017bb:	0f bf c8             	movswl %ax,%ecx
+   1004017be:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004017c2:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   1004017c5:	48 63 d2             	movslq %edx,%rdx
+   1004017c8:	0f b7 04 50          	movzwl (%rax,%rdx,2),%eax
+   1004017cc:	98                   	cwtl   
+   1004017cd:	0f af c1             	imul   %ecx,%eax
+   1004017d0:	c1 f8 0e             	sar    $0xe,%eax
+   1004017d3:	44 01 c0             	add    %r8d,%eax
+   1004017d6:	89 c2                	mov    %eax,%edx
+   1004017d8:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   1004017dc:	66 89 10             	mov    %dx,(%rax)
+        vout->y += FMUL(vin->v[i],m->y[i]);
+   1004017df:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   1004017e3:	0f b7 40 02          	movzwl 0x2(%rax),%eax
+   1004017e7:	41 89 c0             	mov    %eax,%r8d
+   1004017ea:	48 8b 45 18          	mov    0x18(%rbp),%rax
+   1004017ee:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   1004017f1:	48 63 d2             	movslq %edx,%rdx
+   1004017f4:	0f b7 04 50          	movzwl (%rax,%rdx,2),%eax
+   1004017f8:	0f bf c8             	movswl %ax,%ecx
+   1004017fb:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004017ff:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   100401802:	48 63 d2             	movslq %edx,%rdx
+   100401805:	0f b7 44 50 08       	movzwl 0x8(%rax,%rdx,2),%eax
+   10040180a:	98                   	cwtl   
+   10040180b:	0f af c1             	imul   %ecx,%eax
+   10040180e:	c1 f8 0e             	sar    $0xe,%eax
+   100401811:	44 01 c0             	add    %r8d,%eax
+   100401814:	89 c2                	mov    %eax,%edx
+   100401816:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   10040181a:	66 89 50 02          	mov    %dx,0x2(%rax)
+        vout->z += FMUL(vin->v[i],m->z[i]);
+   10040181e:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   100401822:	0f b7 40 04          	movzwl 0x4(%rax),%eax
+   100401826:	41 89 c0             	mov    %eax,%r8d
+   100401829:	48 8b 45 18          	mov    0x18(%rbp),%rax
+   10040182d:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   100401830:	48 63 d2             	movslq %edx,%rdx
+   100401833:	0f b7 04 50          	movzwl (%rax,%rdx,2),%eax
+   100401837:	0f bf d0             	movswl %ax,%edx
+   10040183a:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   10040183e:	8b 4d fc             	mov    -0x4(%rbp),%ecx
+   100401841:	48 63 c9             	movslq %ecx,%rcx
+   100401844:	48 83 c1 08          	add    $0x8,%rcx
+   100401848:	0f b7 04 48          	movzwl (%rax,%rcx,2),%eax
+   10040184c:	98                   	cwtl   
+   10040184d:	0f af c2             	imul   %edx,%eax
+   100401850:	c1 f8 0e             	sar    $0xe,%eax
+   100401853:	44 01 c0             	add    %r8d,%eax
+   100401856:	89 c2                	mov    %eax,%edx
+   100401858:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   10040185c:	66 89 50 04          	mov    %dx,0x4(%rax)
+        vout->w += FMUL(vin->v[i],m->w[i]);
+   100401860:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   100401864:	0f b7 40 06          	movzwl 0x6(%rax),%eax
+   100401868:	41 89 c0             	mov    %eax,%r8d
+   10040186b:	48 8b 45 18          	mov    0x18(%rbp),%rax
+   10040186f:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   100401872:	48 63 d2             	movslq %edx,%rdx
+   100401875:	0f b7 04 50          	movzwl (%rax,%rdx,2),%eax
+   100401879:	0f bf d0             	movswl %ax,%edx
+   10040187c:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   100401880:	8b 4d fc             	mov    -0x4(%rbp),%ecx
+   100401883:	48 63 c9             	movslq %ecx,%rcx
+   100401886:	48 83 c1 08          	add    $0x8,%rcx
+   10040188a:	0f b7 44 48 08       	movzwl 0x8(%rax,%rcx,2),%eax
+   10040188f:	98                   	cwtl   
+   100401890:	0f af c2             	imul   %edx,%eax
+   100401893:	c1 f8 0e             	sar    $0xe,%eax
+   100401896:	44 01 c0             	add    %r8d,%eax
+   100401899:	89 c2                	mov    %eax,%edx
+   10040189b:	48 8b 45 20          	mov    0x20(%rbp),%rax
+   10040189f:	66 89 50 06          	mov    %dx,0x6(%rax)
+    for(i=0;i<4;i++)
+   1004018a3:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+   1004018a7:	83 7d fc 03          	cmpl   $0x3,-0x4(%rbp)
+   1004018ab:	0f 8e f2 fe ff ff    	jle    1004017a3 <transform+0x47>
+    }
+    return vout;
+   1004018b1:	48 8b 45 20          	mov    0x20(%rbp),%rax
+}
+   1004018b5:	48 83 c4 10          	add    $0x10,%rsp
+   1004018b9:	5d                   	pop    %rbp
+   1004018ba:	c3                   	retq   
+
+00000001004018bb <project>:
+
+vector4 *project(vector4 *vin)
+{
+   1004018bb:	55                   	push   %rbp
+   1004018bc:	48 89 e5             	mov    %rsp,%rbp
+   1004018bf:	48 83 ec 20          	sub    $0x20,%rsp
+   1004018c3:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+    printf("%d\n",vin->z);
+   1004018c7:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004018cb:	0f b7 40 04          	movzwl 0x4(%rax),%eax
+   1004018cf:	98                   	cwtl   
+   1004018d0:	89 c2                	mov    %eax,%edx
+   1004018d2:	48 8d 0d 67 27 00 00 	lea    0x2767(%rip),%rcx        # 100404040 <.rdata>
+   1004018d9:	e8 42 02 00 00       	callq  100401b20 <printf>
+    vin->x = FDIV(vin->x,vin->z);
+   1004018de:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004018e2:	0f b7 00             	movzwl (%rax),%eax
+   1004018e5:	44 0f bf c0          	movswl %ax,%r8d
+   1004018e9:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004018ed:	0f b7 40 04          	movzwl 0x4(%rax),%eax
+   1004018f1:	0f bf c8             	movswl %ax,%ecx
+   1004018f4:	b8 0e 00 00 00       	mov    $0xe,%eax
+   1004018f9:	99                   	cltd   
+   1004018fa:	f7 f9                	idiv   %ecx
+   1004018fc:	89 c1                	mov    %eax,%ecx
+   1004018fe:	41 d3 e0             	shl    %cl,%r8d
+   100401901:	44 89 c0             	mov    %r8d,%eax
+   100401904:	89 c2                	mov    %eax,%edx
+   100401906:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   10040190a:	66 89 10             	mov    %dx,(%rax)
+    vin->y = FDIV(vin->y,vin->z);
+   10040190d:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   100401911:	0f b7 40 02          	movzwl 0x2(%rax),%eax
+   100401915:	44 0f bf c0          	movswl %ax,%r8d
+   100401919:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   10040191d:	0f b7 40 04          	movzwl 0x4(%rax),%eax
+   100401921:	0f bf c8             	movswl %ax,%ecx
+   100401924:	b8 0e 00 00 00       	mov    $0xe,%eax
+   100401929:	99                   	cltd   
+   10040192a:	f7 f9                	idiv   %ecx
+   10040192c:	89 c1                	mov    %eax,%ecx
+   10040192e:	41 d3 e0             	shl    %cl,%r8d
+   100401931:	44 89 c0             	mov    %r8d,%eax
+   100401934:	89 c2                	mov    %eax,%edx
+   100401936:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   10040193a:	66 89 50 02          	mov    %dx,0x2(%rax)
+    return vin;
+   10040193e:	48 8b 45 10          	mov    0x10(%rbp),%rax
+}
+   100401942:	48 83 c4 20          	add    $0x20,%rsp
+   100401946:	5d                   	pop    %rbp
+   100401947:	c3                   	retq   
+
+0000000100401948 <dump_vector>:
+
+void dump_vector(vector4 *vin)
+{
+   100401948:	55                   	push   %rbp
+   100401949:	48 89 e5             	mov    %rsp,%rbp
+   10040194c:	48 83 ec 30          	sub    $0x30,%rsp
+   100401950:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+    int i;
+    printf("VECTOR: %f %f %f %f\n",vin->x,vin->y,vin->z,vin->w);
+   100401954:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   100401958:	0f b7 40 06          	movzwl 0x6(%rax),%eax
+   10040195c:	0f bf d0             	movswl %ax,%edx
+   10040195f:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   100401963:	0f b7 40 04          	movzwl 0x4(%rax),%eax
+   100401967:	44 0f bf c0          	movswl %ax,%r8d
+   10040196b:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   10040196f:	0f b7 40 02          	movzwl 0x2(%rax),%eax
+   100401973:	0f bf c8             	movswl %ax,%ecx
+   100401976:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   10040197a:	0f b7 00             	movzwl (%rax),%eax
+   10040197d:	98                   	cwtl   
+   10040197e:	89 54 24 20          	mov    %edx,0x20(%rsp)
+   100401982:	45 89 c1             	mov    %r8d,%r9d
+   100401985:	41 89 c8             	mov    %ecx,%r8d
+   100401988:	89 c2                	mov    %eax,%edx
+   10040198a:	48 8d 0d b3 26 00 00 	lea    0x26b3(%rip),%rcx        # 100404044 <.rdata+0x4>
+   100401991:	e8 8a 01 00 00       	callq  100401b20 <printf>
+}
+   100401996:	90                   	nop
+   100401997:	48 83 c4 30          	add    $0x30,%rsp
+   10040199b:	5d                   	pop    %rbp
+   10040199c:	c3                   	retq   
+
+000000010040199d <dump_matrix>:
+
+void dump_matrix(matrix4x4 *m)
+{
+   10040199d:	55                   	push   %rbp
+   10040199e:	48 89 e5             	mov    %rsp,%rbp
+   1004019a1:	48 83 ec 30          	sub    $0x30,%rsp
+   1004019a5:	48 89 4d 10          	mov    %rcx,0x10(%rbp)
+    int i;
+    printf("MATRIX:\n");
+   1004019a9:	48 8d 0d a9 26 00 00 	lea    0x26a9(%rip),%rcx        # 100404059 <.rdata+0x19>
+   1004019b0:	e8 8b 01 00 00       	callq  100401b40 <puts>
+    for(i=0;i<4;i++)
+   1004019b5:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   1004019bc:	eb 21                	jmp    1004019df <dump_matrix+0x42>
+    {
+        printf("%f ",m->x[i]);
+   1004019be:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004019c2:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   1004019c5:	48 63 d2             	movslq %edx,%rdx
+   1004019c8:	0f b7 04 50          	movzwl (%rax,%rdx,2),%eax
+   1004019cc:	98                   	cwtl   
+   1004019cd:	89 c2                	mov    %eax,%edx
+   1004019cf:	48 8d 0d 8b 26 00 00 	lea    0x268b(%rip),%rcx        # 100404061 <.rdata+0x21>
+   1004019d6:	e8 45 01 00 00       	callq  100401b20 <printf>
+    for(i=0;i<4;i++)
+   1004019db:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+   1004019df:	83 7d fc 03          	cmpl   $0x3,-0x4(%rbp)
+   1004019e3:	7e d9                	jle    1004019be <dump_matrix+0x21>
+    }
+    printf("\n");
+   1004019e5:	b9 0a 00 00 00       	mov    $0xa,%ecx
+   1004019ea:	e8 41 01 00 00       	callq  100401b30 <putchar>
+    for(i=0;i<4;i++)
+   1004019ef:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   1004019f6:	eb 22                	jmp    100401a1a <dump_matrix+0x7d>
+    {
+        printf("%f ",m->y[i]);
+   1004019f8:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   1004019fc:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   1004019ff:	48 63 d2             	movslq %edx,%rdx
+   100401a02:	0f b7 44 50 08       	movzwl 0x8(%rax,%rdx,2),%eax
+   100401a07:	98                   	cwtl   
+   100401a08:	89 c2                	mov    %eax,%edx
+   100401a0a:	48 8d 0d 50 26 00 00 	lea    0x2650(%rip),%rcx        # 100404061 <.rdata+0x21>
+   100401a11:	e8 0a 01 00 00       	callq  100401b20 <printf>
+    for(i=0;i<4;i++)
+   100401a16:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+   100401a1a:	83 7d fc 03          	cmpl   $0x3,-0x4(%rbp)
+   100401a1e:	7e d8                	jle    1004019f8 <dump_matrix+0x5b>
+    }
+    printf("\n");
+   100401a20:	b9 0a 00 00 00       	mov    $0xa,%ecx
+   100401a25:	e8 06 01 00 00       	callq  100401b30 <putchar>
+    for(i=0;i<4;i++)
+   100401a2a:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   100401a31:	eb 25                	jmp    100401a58 <dump_matrix+0xbb>
+    {
+        printf("%f ",m->z[i]);
+   100401a33:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   100401a37:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   100401a3a:	48 63 d2             	movslq %edx,%rdx
+   100401a3d:	48 83 c2 08          	add    $0x8,%rdx
+   100401a41:	0f b7 04 50          	movzwl (%rax,%rdx,2),%eax
+   100401a45:	98                   	cwtl   
+   100401a46:	89 c2                	mov    %eax,%edx
+   100401a48:	48 8d 0d 12 26 00 00 	lea    0x2612(%rip),%rcx        # 100404061 <.rdata+0x21>
+   100401a4f:	e8 cc 00 00 00       	callq  100401b20 <printf>
+    for(i=0;i<4;i++)
+   100401a54:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+   100401a58:	83 7d fc 03          	cmpl   $0x3,-0x4(%rbp)
+   100401a5c:	7e d5                	jle    100401a33 <dump_matrix+0x96>
+    }
+    printf("\n");
+   100401a5e:	b9 0a 00 00 00       	mov    $0xa,%ecx
+   100401a63:	e8 c8 00 00 00       	callq  100401b30 <putchar>
+    for(i=0;i<4;i++)
+   100401a68:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   100401a6f:	eb 26                	jmp    100401a97 <dump_matrix+0xfa>
+    {
+        printf("%f ",m->w[i]);
+   100401a71:	48 8b 45 10          	mov    0x10(%rbp),%rax
+   100401a75:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   100401a78:	48 63 d2             	movslq %edx,%rdx
+   100401a7b:	48 83 c2 08          	add    $0x8,%rdx
+   100401a7f:	0f b7 44 50 08       	movzwl 0x8(%rax,%rdx,2),%eax
+   100401a84:	98                   	cwtl   
+   100401a85:	89 c2                	mov    %eax,%edx
+   100401a87:	48 8d 0d d3 25 00 00 	lea    0x25d3(%rip),%rcx        # 100404061 <.rdata+0x21>
+   100401a8e:	e8 8d 00 00 00       	callq  100401b20 <printf>
+    for(i=0;i<4;i++)
+   100401a93:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+   100401a97:	83 7d fc 03          	cmpl   $0x3,-0x4(%rbp)
+   100401a9b:	7e d4                	jle    100401a71 <dump_matrix+0xd4>
+    }
+    printf("\n");
+   100401a9d:	b9 0a 00 00 00       	mov    $0xa,%ecx
+   100401aa2:	e8 89 00 00 00       	callq  100401b30 <putchar>
+}
+   100401aa7:	90                   	nop
+   100401aa8:	48 83 c4 30          	add    $0x30,%rsp
+   100401aac:	5d                   	pop    %rbp
+   100401aad:	c3                   	retq   
+   100401aae:	90                   	nop
+   100401aaf:	90                   	nop
+
+0000000100401ab0 <SDL_UpdateWindowSurface>:
+   100401ab0:	ff 25 4a 77 00 00    	jmpq   *0x774a(%rip)        # 100409200 <__imp_SDL_UpdateWindowSurface>
+   100401ab6:	90                   	nop
+   100401ab7:	90                   	nop
+
+0000000100401ab8 <SDL_Quit>:
+   100401ab8:	ff 25 3a 77 00 00    	jmpq   *0x773a(%rip)        # 1004091f8 <__imp_SDL_Quit>
+   100401abe:	90                   	nop
+   100401abf:	90                   	nop
+
+0000000100401ac0 <SDL_PollEvent>:
+   100401ac0:	ff 25 2a 77 00 00    	jmpq   *0x772a(%rip)        # 1004091f0 <__imp_SDL_PollEvent>
+   100401ac6:	90                   	nop
+   100401ac7:	90                   	nop
+
+0000000100401ac8 <SDL_MapRGB>:
+   100401ac8:	ff 25 1a 77 00 00    	jmpq   *0x771a(%rip)        # 1004091e8 <__imp_SDL_MapRGB>
+   100401ace:	90                   	nop
+   100401acf:	90                   	nop
+
+0000000100401ad0 <SDL_Init>:
+   100401ad0:	ff 25 0a 77 00 00    	jmpq   *0x770a(%rip)        # 1004091e0 <__imp_SDL_Init>
+   100401ad6:	90                   	nop
+   100401ad7:	90                   	nop
+
+0000000100401ad8 <SDL_GetWindowSurface>:
+   100401ad8:	ff 25 fa 76 00 00    	jmpq   *0x76fa(%rip)        # 1004091d8 <__imp_SDL_GetWindowSurface>
+   100401ade:	90                   	nop
+   100401adf:	90                   	nop
+
+0000000100401ae0 <SDL_GetError>:
+   100401ae0:	ff 25 ea 76 00 00    	jmpq   *0x76ea(%rip)        # 1004091d0 <__imp_SDL_GetError>
+   100401ae6:	90                   	nop
+   100401ae7:	90                   	nop
+
+0000000100401ae8 <SDL_FillRect>:
+   100401ae8:	ff 25 da 76 00 00    	jmpq   *0x76da(%rip)        # 1004091c8 <__imp_SDL_FillRect>
+   100401aee:	90                   	nop
+   100401aef:	90                   	nop
+
+0000000100401af0 <SDL_DestroyWindow>:
+   100401af0:	ff 25 ca 76 00 00    	jmpq   *0x76ca(%rip)        # 1004091c0 <__imp_SDL_DestroyWindow>
+   100401af6:	90                   	nop
+   100401af7:	90                   	nop
+
+0000000100401af8 <SDL_CreateWindow>:
+   100401af8:	ff 25 ba 76 00 00    	jmpq   *0x76ba(%rip)        # 1004091b8 <__imp_SDL_CreateWindow>
+   100401afe:	90                   	nop
+   100401aff:	90                   	nop
+
+0000000100401b00 <__cxa_atexit>:
+   100401b00:	ff 25 32 76 00 00    	jmpq   *0x7632(%rip)        # 100409138 <__IAT_start__>
+   100401b06:	90                   	nop
+   100401b07:	90                   	nop
+   100401b08:	90                   	nop
+   100401b09:	90                   	nop
+   100401b0a:	90                   	nop
+   100401b0b:	90                   	nop
+   100401b0c:	90                   	nop
+   100401b0d:	90                   	nop
+   100401b0e:	90                   	nop
+   100401b0f:	90                   	nop
+
+0000000100401b10 <__main>:
+   100401b10:	ff 25 2a 76 00 00    	jmpq   *0x762a(%rip)        # 100409140 <__imp___main>
+   100401b16:	90                   	nop
+   100401b17:	90                   	nop
+   100401b18:	90                   	nop
+   100401b19:	90                   	nop
+   100401b1a:	90                   	nop
+   100401b1b:	90                   	nop
+   100401b1c:	90                   	nop
+   100401b1d:	90                   	nop
+   100401b1e:	90                   	nop
+   100401b1f:	90                   	nop
+
+0000000100401b20 <printf>:
+   100401b20:	ff 25 6a 76 00 00    	jmpq   *0x766a(%rip)        # 100409190 <__imp_printf>
+   100401b26:	90                   	nop
+   100401b27:	90                   	nop
+   100401b28:	90                   	nop
+   100401b29:	90                   	nop
+   100401b2a:	90                   	nop
+   100401b2b:	90                   	nop
+   100401b2c:	90                   	nop
+   100401b2d:	90                   	nop
+   100401b2e:	90                   	nop
+   100401b2f:	90                   	nop
+
+0000000100401b30 <putchar>:
+   100401b30:	ff 25 62 76 00 00    	jmpq   *0x7662(%rip)        # 100409198 <__imp_putchar>
+   100401b36:	90                   	nop
+   100401b37:	90                   	nop
+   100401b38:	90                   	nop
+   100401b39:	90                   	nop
+   100401b3a:	90                   	nop
+   100401b3b:	90                   	nop
+   100401b3c:	90                   	nop
+   100401b3d:	90                   	nop
+   100401b3e:	90                   	nop
+   100401b3f:	90                   	nop
+
+0000000100401b40 <puts>:
+   100401b40:	ff 25 5a 76 00 00    	jmpq   *0x765a(%rip)        # 1004091a0 <__imp_puts>
+   100401b46:	90                   	nop
+   100401b47:	90                   	nop
+   100401b48:	90                   	nop
+   100401b49:	90                   	nop
+   100401b4a:	90                   	nop
+   100401b4b:	90                   	nop
+   100401b4c:	90                   	nop
+   100401b4d:	90                   	nop
+   100401b4e:	90                   	nop
+   100401b4f:	90                   	nop
+
+0000000100401b50 <cygwin_crt0>:
+   100401b50:	48 83 ec 28          	sub    $0x28,%rsp
+   100401b54:	31 d2                	xor    %edx,%edx
+   100401b56:	e8 55 00 00 00       	callq  100401bb0 <_cygwin_crt0_common>
+   100401b5b:	ff 15 e7 75 00 00    	callq  *0x75e7(%rip)        # 100409148 <__imp__dll_crt0>
+   100401b61:	90                   	nop
+   100401b62:	90                   	nop
+   100401b63:	90                   	nop
+   100401b64:	90                   	nop
+   100401b65:	90                   	nop
+   100401b66:	90                   	nop
+   100401b67:	90                   	nop
+   100401b68:	90                   	nop
+   100401b69:	90                   	nop
+   100401b6a:	90                   	nop
+   100401b6b:	90                   	nop
+   100401b6c:	90                   	nop
+   100401b6d:	90                   	nop
+   100401b6e:	90                   	nop
+   100401b6f:	90                   	nop
+
+0000000100401b70 <cygwin_premain0>:
+   100401b70:	c3                   	retq   
+   100401b71:	90                   	nop
+   100401b72:	90                   	nop
+   100401b73:	90                   	nop
+   100401b74:	90                   	nop
+   100401b75:	90                   	nop
+   100401b76:	90                   	nop
+   100401b77:	90                   	nop
+   100401b78:	90                   	nop
+   100401b79:	90                   	nop
+   100401b7a:	90                   	nop
+   100401b7b:	90                   	nop
+   100401b7c:	90                   	nop
+   100401b7d:	90                   	nop
+   100401b7e:	90                   	nop
+   100401b7f:	90                   	nop
+
+0000000100401b80 <cygwin_premain1>:
+   100401b80:	c3                   	retq   
+   100401b81:	90                   	nop
+   100401b82:	90                   	nop
+   100401b83:	90                   	nop
+   100401b84:	90                   	nop
+   100401b85:	90                   	nop
+   100401b86:	90                   	nop
+   100401b87:	90                   	nop
+   100401b88:	90                   	nop
+   100401b89:	90                   	nop
+   100401b8a:	90                   	nop
+   100401b8b:	90                   	nop
+   100401b8c:	90                   	nop
+   100401b8d:	90                   	nop
+   100401b8e:	90                   	nop
+   100401b8f:	90                   	nop
+
+0000000100401b90 <cygwin_premain2>:
+   100401b90:	c3                   	retq   
+   100401b91:	90                   	nop
+   100401b92:	90                   	nop
+   100401b93:	90                   	nop
+   100401b94:	90                   	nop
+   100401b95:	90                   	nop
+   100401b96:	90                   	nop
+   100401b97:	90                   	nop
+   100401b98:	90                   	nop
+   100401b99:	90                   	nop
+   100401b9a:	90                   	nop
+   100401b9b:	90                   	nop
+   100401b9c:	90                   	nop
+   100401b9d:	90                   	nop
+   100401b9e:	90                   	nop
+   100401b9f:	90                   	nop
+
+0000000100401ba0 <cygwin_premain3>:
+   100401ba0:	c3                   	retq   
+   100401ba1:	90                   	nop
+   100401ba2:	90                   	nop
+   100401ba3:	90                   	nop
+   100401ba4:	90                   	nop
+   100401ba5:	90                   	nop
+   100401ba6:	90                   	nop
+   100401ba7:	90                   	nop
+   100401ba8:	90                   	nop
+   100401ba9:	90                   	nop
+   100401baa:	90                   	nop
+   100401bab:	90                   	nop
+   100401bac:	90                   	nop
+   100401bad:	90                   	nop
+   100401bae:	90                   	nop
+   100401baf:	90                   	nop
+
+0000000100401bb0 <_cygwin_crt0_common>:
+   100401bb0:	56                   	push   %rsi
+   100401bb1:	53                   	push   %rbx
+   100401bb2:	48 83 ec 28          	sub    $0x28,%rsp
+   100401bb6:	48 89 d3             	mov    %rdx,%rbx
+   100401bb9:	48 89 ce             	mov    %rcx,%rsi
+   100401bbc:	b9 08 00 00 00       	mov    $0x8,%ecx
+   100401bc1:	e8 ea 04 00 00       	callq  1004020b0 <cygwin_internal>
+   100401bc6:	48 85 db             	test   %rbx,%rbx
+   100401bc9:	0f 84 34 02 00 00    	je     100401e03 <_cygwin_crt0_common+0x253>
+   100401bcf:	48 89 73 40          	mov    %rsi,0x40(%rbx)
+   100401bd3:	48 8d 35 96 ff ff ff 	lea    -0x6a(%rip),%rsi        # 100401b70 <cygwin_premain0>
+   100401bda:	48 8d 15 7f 05 00 00 	lea    0x57f(%rip),%rdx        # 100402160 <__CTOR_LIST__>
+   100401be1:	48 b9 00 00 00 00 52 	movabs $0x15200000000,%rcx
+   100401be8:	01 00 00 
+   100401beb:	48 85 c0             	test   %rax,%rax
+   100401bee:	48 c7 03 00 00 00 00 	movq   $0x0,(%rbx)
+   100401bf5:	48 89 b3 80 00 00 00 	mov    %rsi,0x80(%rbx)
+   100401bfc:	48 8d 35 7d ff ff ff 	lea    -0x83(%rip),%rsi        # 100401b80 <cygwin_premain1>
+   100401c03:	48 89 53 48          	mov    %rdx,0x48(%rbx)
+   100401c07:	48 8b 15 42 75 00 00 	mov    0x7542(%rip),%rdx        # 100409150 <__imp__impure_ptr>
+   100401c0e:	48 89 8b f0 00 00 00 	mov    %rcx,0xf0(%rbx)
+   100401c15:	48 8d 0d 5c 05 00 00 	lea    0x55c(%rip),%rcx        # 100402178 <__DTOR_LIST__>
+   100401c1c:	48 89 b3 88 00 00 00 	mov    %rsi,0x88(%rbx)
+   100401c23:	48 8d 35 66 ff ff ff 	lea    -0x9a(%rip),%rsi        # 100401b90 <cygwin_premain2>
+   100401c2a:	c7 43 10 07 00 00 00 	movl   $0x7,0x10(%rbx)
+   100401c31:	48 89 4b 50          	mov    %rcx,0x50(%rbx)
+   100401c35:	48 b9 48 01 00 00 b8 	movabs $0xbb800000148,%rcx
+   100401c3c:	0b 00 00 
+   100401c3f:	48 89 53 18          	mov    %rdx,0x18(%rbx)
+   100401c43:	48 89 b3 90 00 00 00 	mov    %rsi,0x90(%rbx)
+   100401c4a:	48 8d 15 af 63 00 00 	lea    0x63af(%rip),%rdx        # 100408000 <__bss_start__>
+   100401c51:	48 8d 35 48 ff ff ff 	lea    -0xb8(%rip),%rsi        # 100401ba0 <cygwin_premain3>
+   100401c58:	48 89 4b 08          	mov    %rcx,0x8(%rbx)
+   100401c5c:	48 8d 0d 8d 04 00 00 	lea    0x48d(%rip),%rcx        # 1004020f0 <realloc>
+   100401c63:	48 89 53 38          	mov    %rdx,0x38(%rbx)
+   100401c67:	48 8d 15 52 04 00 00 	lea    0x452(%rip),%rdx        # 1004020c0 <free>
+   100401c6e:	48 89 b3 98 00 00 00 	mov    %rsi,0x98(%rbx)
+   100401c75:	48 8d 35 54 04 00 00 	lea    0x454(%rip),%rsi        # 1004020d0 <malloc>
+   100401c7c:	48 89 4b 30          	mov    %rcx,0x30(%rbx)
+   100401c80:	48 89 53 28          	mov    %rdx,0x28(%rbx)
+   100401c84:	48 8d 15 55 04 00 00 	lea    0x455(%rip),%rdx        # 1004020e0 <posix_memalign>
+   100401c8b:	48 89 73 20          	mov    %rsi,0x20(%rbx)
+   100401c8f:	48 8d 35 fa 03 00 00 	lea    0x3fa(%rip),%rsi        # 100402090 <calloc>
+   100401c96:	48 89 93 18 01 00 00 	mov    %rdx,0x118(%rbx)
+   100401c9d:	48 89 73 78          	mov    %rsi,0x78(%rbx)
+   100401ca1:	0f 84 e5 00 00 00    	je     100401d8c <_cygwin_crt0_common+0x1dc>
+   100401ca7:	48 8b 90 e0 00 00 00 	mov    0xe0(%rax),%rdx
+   100401cae:	48 85 d2             	test   %rdx,%rdx
+   100401cb1:	0f 84 d5 00 00 00    	je     100401d8c <_cygwin_crt0_common+0x1dc>
+   100401cb7:	8b 05 53 63 00 00    	mov    0x6353(%rip),%eax        # 100408010 <__dynamically_loaded>
+   100401cbd:	85 c0                	test   %eax,%eax
+   100401cbf:	0f 85 c7 00 00 00    	jne    100401d8c <_cygwin_crt0_common+0x1dc>
+   100401cc5:	48 83 3d 53 13 00 00 	cmpq   $0x0,0x1353(%rip)        # 100403020 <__cygwin_cxx_malloc>
+   100401ccc:	00 
+   100401ccd:	0f 84 2d 02 00 00    	je     100401f00 <_cygwin_crt0_common+0x350>
+   100401cd3:	48 83 3d 4d 13 00 00 	cmpq   $0x0,0x134d(%rip)        # 100403028 <__cygwin_cxx_malloc+0x8>
+   100401cda:	00 
+   100401cdb:	0f 84 8f 02 00 00    	je     100401f70 <_cygwin_crt0_common+0x3c0>
+   100401ce1:	48 83 3d 47 13 00 00 	cmpq   $0x0,0x1347(%rip)        # 100403030 <__cygwin_cxx_malloc+0x10>
+   100401ce8:	00 
+   100401ce9:	0f 84 71 02 00 00    	je     100401f60 <_cygwin_crt0_common+0x3b0>
+   100401cef:	48 83 3d 41 13 00 00 	cmpq   $0x0,0x1341(%rip)        # 100403038 <__cygwin_cxx_malloc+0x18>
+   100401cf6:	00 
+   100401cf7:	0f 84 53 02 00 00    	je     100401f50 <_cygwin_crt0_common+0x3a0>
+   100401cfd:	48 83 3d 3b 13 00 00 	cmpq   $0x0,0x133b(%rip)        # 100403040 <__cygwin_cxx_malloc+0x20>
+   100401d04:	00 
+   100401d05:	0f 84 35 02 00 00    	je     100401f40 <_cygwin_crt0_common+0x390>
+   100401d0b:	48 83 3d 35 13 00 00 	cmpq   $0x0,0x1335(%rip)        # 100403048 <__cygwin_cxx_malloc+0x28>
+   100401d12:	00 
+   100401d13:	0f 84 17 02 00 00    	je     100401f30 <_cygwin_crt0_common+0x380>
+   100401d19:	48 83 3d 2f 13 00 00 	cmpq   $0x0,0x132f(%rip)        # 100403050 <__cygwin_cxx_malloc+0x30>
+   100401d20:	00 
+   100401d21:	0f 84 f9 01 00 00    	je     100401f20 <_cygwin_crt0_common+0x370>
+   100401d27:	48 83 3d 29 13 00 00 	cmpq   $0x0,0x1329(%rip)        # 100403058 <__cygwin_cxx_malloc+0x38>
+   100401d2e:	00 
+   100401d2f:	0f 84 db 01 00 00    	je     100401f10 <_cygwin_crt0_common+0x360>
+   100401d35:	4c 8b 0d e4 12 00 00 	mov    0x12e4(%rip),%r9        # 100403020 <__cygwin_cxx_malloc>
+   100401d3c:	4c 8b 15 e5 12 00 00 	mov    0x12e5(%rip),%r10        # 100403028 <__cygwin_cxx_malloc+0x8>
+   100401d43:	4c 89 0a             	mov    %r9,(%rdx)
+   100401d46:	4c 89 52 08          	mov    %r10,0x8(%rdx)
+   100401d4a:	4c 8b 0d df 12 00 00 	mov    0x12df(%rip),%r9        # 100403030 <__cygwin_cxx_malloc+0x10>
+   100401d51:	4c 8b 15 e0 12 00 00 	mov    0x12e0(%rip),%r10        # 100403038 <__cygwin_cxx_malloc+0x18>
+   100401d58:	4c 89 4a 10          	mov    %r9,0x10(%rdx)
+   100401d5c:	4c 89 52 18          	mov    %r10,0x18(%rdx)
+   100401d60:	4c 8b 0d d9 12 00 00 	mov    0x12d9(%rip),%r9        # 100403040 <__cygwin_cxx_malloc+0x20>
+   100401d67:	4c 8b 15 da 12 00 00 	mov    0x12da(%rip),%r10        # 100403048 <__cygwin_cxx_malloc+0x28>
+   100401d6e:	4c 89 4a 20          	mov    %r9,0x20(%rdx)
+   100401d72:	4c 89 52 28          	mov    %r10,0x28(%rdx)
+   100401d76:	4c 8b 0d d3 12 00 00 	mov    0x12d3(%rip),%r9        # 100403050 <__cygwin_cxx_malloc+0x30>
+   100401d7d:	4c 8b 15 d4 12 00 00 	mov    0x12d4(%rip),%r10        # 100403058 <__cygwin_cxx_malloc+0x38>
+   100401d84:	4c 89 4a 30          	mov    %r9,0x30(%rdx)
+   100401d88:	4c 89 52 38          	mov    %r10,0x38(%rdx)
+   100401d8c:	31 c9                	xor    %ecx,%ecx
+   100401d8e:	e8 ad 03 00 00       	callq  100402140 <GetModuleHandleA>
+   100401d93:	48 89 83 e8 00 00 00 	mov    %rax,0xe8(%rbx)
+   100401d9a:	48 8d 05 5f 12 00 00 	lea    0x125f(%rip),%rax        # 100403000 <__data_start__>
+   100401da1:	31 c9                	xor    %ecx,%ecx
+   100401da3:	48 89 43 58          	mov    %rax,0x58(%rbx)
+   100401da7:	48 8d 05 b2 12 00 00 	lea    0x12b2(%rip),%rax        # 100403060 <__data_end__>
+   100401dae:	48 89 43 60          	mov    %rax,0x60(%rbx)
+   100401db2:	48 8d 05 47 62 00 00 	lea    0x6247(%rip),%rax        # 100408000 <__bss_start__>
+   100401db9:	48 89 43 68          	mov    %rax,0x68(%rbx)
+   100401dbd:	48 8d 05 5c 64 00 00 	lea    0x645c(%rip),%rax        # 100408220 <__bss_end__>
+   100401dc4:	48 89 43 70          	mov    %rax,0x70(%rbx)
+   100401dc8:	48 8d 05 01 26 00 00 	lea    0x2601(%rip),%rax        # 1004043d0 <__RUNTIME_PSEUDO_RELOC_LIST_END__>
+   100401dcf:	48 89 83 20 01 00 00 	mov    %rax,0x120(%rbx)
+   100401dd6:	48 8d 05 f3 25 00 00 	lea    0x25f3(%rip),%rax        # 1004043d0 <__RUNTIME_PSEUDO_RELOC_LIST_END__>
+   100401ddd:	48 89 83 28 01 00 00 	mov    %rax,0x128(%rbx)
+   100401de4:	48 8d 05 15 e2 ff ff 	lea    -0x1deb(%rip),%rax        # 100400000 <__ImageBase+0x100000000>
+   100401deb:	48 89 83 30 01 00 00 	mov    %rax,0x130(%rbx)
+   100401df2:	e8 89 02 00 00       	callq  100402080 <_pei386_runtime_relocator>
+   100401df7:	b8 01 00 00 00       	mov    $0x1,%eax
+   100401dfc:	48 83 c4 28          	add    $0x28,%rsp
+   100401e00:	5b                   	pop    %rbx
+   100401e01:	5e                   	pop    %rsi
+   100401e02:	c3                   	retq   
+   100401e03:	48 b9 48 01 00 00 b8 	movabs $0xbb800000148,%rcx
+   100401e0a:	0b 00 00 
+   100401e0d:	48 ba 00 00 00 00 52 	movabs $0x15200000000,%rdx
+   100401e14:	01 00 00 
+   100401e17:	48 89 70 40          	mov    %rsi,0x40(%rax)
+   100401e1b:	48 89 48 08          	mov    %rcx,0x8(%rax)
+   100401e1f:	48 89 90 f0 00 00 00 	mov    %rdx,0xf0(%rax)
+   100401e26:	48 8d 0d 33 03 00 00 	lea    0x333(%rip),%rcx        # 100402160 <__CTOR_LIST__>
+   100401e2d:	48 8d 15 44 03 00 00 	lea    0x344(%rip),%rdx        # 100402178 <__DTOR_LIST__>
+   100401e34:	48 8d 35 35 fd ff ff 	lea    -0x2cb(%rip),%rsi        # 100401b70 <cygwin_premain0>
+   100401e3b:	48 85 c0             	test   %rax,%rax
+   100401e3e:	48 89 48 48          	mov    %rcx,0x48(%rax)
+   100401e42:	48 8b 88 40 01 00 00 	mov    0x140(%rax),%rcx
+   100401e49:	48 89 50 50          	mov    %rdx,0x50(%rax)
+   100401e4d:	48 8b 15 fc 72 00 00 	mov    0x72fc(%rip),%rdx        # 100409150 <__imp__impure_ptr>
+   100401e54:	48 89 b0 80 00 00 00 	mov    %rsi,0x80(%rax)
+   100401e5b:	48 8d 35 1e fd ff ff 	lea    -0x2e2(%rip),%rsi        # 100401b80 <cygwin_premain1>
+   100401e62:	c7 40 10 07 00 00 00 	movl   $0x7,0x10(%rax)
+   100401e69:	48 89 0a             	mov    %rcx,(%rdx)
+   100401e6c:	48 89 b0 88 00 00 00 	mov    %rsi,0x88(%rax)
+   100401e73:	48 8d 0d 16 fd ff ff 	lea    -0x2ea(%rip),%rcx        # 100401b90 <cygwin_premain2>
+   100401e7a:	48 8d 35 1f fd ff ff 	lea    -0x2e1(%rip),%rsi        # 100401ba0 <cygwin_premain3>
+   100401e81:	48 8d 15 78 61 00 00 	lea    0x6178(%rip),%rdx        # 100408000 <__bss_start__>
+   100401e88:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+   100401e8f:	48 89 88 90 00 00 00 	mov    %rcx,0x90(%rax)
+   100401e96:	48 8d 0d 33 02 00 00 	lea    0x233(%rip),%rcx        # 1004020d0 <malloc>
+   100401e9d:	48 89 b0 98 00 00 00 	mov    %rsi,0x98(%rax)
+   100401ea4:	48 8d 35 15 02 00 00 	lea    0x215(%rip),%rsi        # 1004020c0 <free>
+   100401eab:	48 89 50 38          	mov    %rdx,0x38(%rax)
+   100401eaf:	48 89 48 20          	mov    %rcx,0x20(%rax)
+   100401eb3:	48 8d 15 36 02 00 00 	lea    0x236(%rip),%rdx        # 1004020f0 <realloc>
+   100401eba:	48 8d 0d cf 01 00 00 	lea    0x1cf(%rip),%rcx        # 100402090 <calloc>
+   100401ec1:	48 89 70 28          	mov    %rsi,0x28(%rax)
+   100401ec5:	48 8d 35 14 02 00 00 	lea    0x214(%rip),%rsi        # 1004020e0 <posix_memalign>
+   100401ecc:	48 89 50 30          	mov    %rdx,0x30(%rax)
+   100401ed0:	48 89 48 78          	mov    %rcx,0x78(%rax)
+   100401ed4:	48 89 b0 18 01 00 00 	mov    %rsi,0x118(%rax)
+   100401edb:	0f 84 ab fe ff ff    	je     100401d8c <_cygwin_crt0_common+0x1dc>
+   100401ee1:	48 8b 90 e0 00 00 00 	mov    0xe0(%rax),%rdx
+   100401ee8:	48 89 c3             	mov    %rax,%rbx
+   100401eeb:	48 85 d2             	test   %rdx,%rdx
+   100401eee:	0f 85 c3 fd ff ff    	jne    100401cb7 <_cygwin_crt0_common+0x107>
+   100401ef4:	e9 93 fe ff ff       	jmpq   100401d8c <_cygwin_crt0_common+0x1dc>
+   100401ef9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+   100401f00:	48 8b 02             	mov    (%rdx),%rax
+   100401f03:	48 89 05 16 11 00 00 	mov    %rax,0x1116(%rip)        # 100403020 <__cygwin_cxx_malloc>
+   100401f0a:	e9 c4 fd ff ff       	jmpq   100401cd3 <_cygwin_crt0_common+0x123>
+   100401f0f:	90                   	nop
+   100401f10:	48 8b 42 38          	mov    0x38(%rdx),%rax
+   100401f14:	48 89 05 3d 11 00 00 	mov    %rax,0x113d(%rip)        # 100403058 <__cygwin_cxx_malloc+0x38>
+   100401f1b:	e9 15 fe ff ff       	jmpq   100401d35 <_cygwin_crt0_common+0x185>
+   100401f20:	48 8b 42 30          	mov    0x30(%rdx),%rax
+   100401f24:	48 89 05 25 11 00 00 	mov    %rax,0x1125(%rip)        # 100403050 <__cygwin_cxx_malloc+0x30>
+   100401f2b:	e9 f7 fd ff ff       	jmpq   100401d27 <_cygwin_crt0_common+0x177>
+   100401f30:	48 8b 42 28          	mov    0x28(%rdx),%rax
+   100401f34:	48 89 05 0d 11 00 00 	mov    %rax,0x110d(%rip)        # 100403048 <__cygwin_cxx_malloc+0x28>
+   100401f3b:	e9 d9 fd ff ff       	jmpq   100401d19 <_cygwin_crt0_common+0x169>
+   100401f40:	48 8b 42 20          	mov    0x20(%rdx),%rax
+   100401f44:	48 89 05 f5 10 00 00 	mov    %rax,0x10f5(%rip)        # 100403040 <__cygwin_cxx_malloc+0x20>
+   100401f4b:	e9 bb fd ff ff       	jmpq   100401d0b <_cygwin_crt0_common+0x15b>
+   100401f50:	48 8b 42 18          	mov    0x18(%rdx),%rax
+   100401f54:	48 89 05 dd 10 00 00 	mov    %rax,0x10dd(%rip)        # 100403038 <__cygwin_cxx_malloc+0x18>
+   100401f5b:	e9 9d fd ff ff       	jmpq   100401cfd <_cygwin_crt0_common+0x14d>
+   100401f60:	48 8b 42 10          	mov    0x10(%rdx),%rax
+   100401f64:	48 89 05 c5 10 00 00 	mov    %rax,0x10c5(%rip)        # 100403030 <__cygwin_cxx_malloc+0x10>
+   100401f6b:	e9 7f fd ff ff       	jmpq   100401cef <_cygwin_crt0_common+0x13f>
+   100401f70:	48 8b 42 08          	mov    0x8(%rdx),%rax
+   100401f74:	48 89 05 ad 10 00 00 	mov    %rax,0x10ad(%rip)        # 100403028 <__cygwin_cxx_malloc+0x8>
+   100401f7b:	e9 61 fd ff ff       	jmpq   100401ce1 <_cygwin_crt0_common+0x131>
+
+0000000100401f80 <__dllMain>:
+   100401f80:	4c 8b 05 99 60 00 00 	mov    0x6099(%rip),%r8        # 100408020 <storedPtr>
+   100401f87:	8b 15 9b 60 00 00    	mov    0x609b(%rip),%edx        # 100408028 <storedReason>
+   100401f8d:	48 8b 0d 9c 60 00 00 	mov    0x609c(%rip),%rcx        # 100408030 <storedHandle>
+   100401f94:	e9 d7 00 00 00       	jmpq   100402070 <DllMain>
+   100401f99:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000100401fa0 <_cygwin_dll_entry>:
+   100401fa0:	48 83 ec 38          	sub    $0x38,%rsp
+   100401fa4:	83 fa 01             	cmp    $0x1,%edx
+   100401fa7:	74 67                	je     100402010 <_cygwin_dll_entry+0x70>
+   100401fa9:	72 35                	jb     100401fe0 <_cygwin_dll_entry+0x40>
+   100401fab:	83 fa 02             	cmp    $0x2,%edx
+   100401fae:	74 13                	je     100401fc3 <_cygwin_dll_entry+0x23>
+   100401fb0:	83 fa 03             	cmp    $0x3,%edx
+   100401fb3:	75 1c                	jne    100401fd1 <_cygwin_dll_entry+0x31>
+   100401fb5:	ba 03 00 00 00       	mov    $0x3,%edx
+   100401fba:	48 83 c4 38          	add    $0x38,%rsp
+   100401fbe:	e9 ad 00 00 00       	jmpq   100402070 <DllMain>
+   100401fc3:	ba 02 00 00 00       	mov    $0x2,%edx
+   100401fc8:	48 83 c4 38          	add    $0x38,%rsp
+   100401fcc:	e9 9f 00 00 00       	jmpq   100402070 <DllMain>
+   100401fd1:	b8 01 00 00 00       	mov    $0x1,%eax
+   100401fd6:	48 83 c4 38          	add    $0x38,%rsp
+   100401fda:	c3                   	retq   
+   100401fdb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+   100401fe0:	31 d2                	xor    %edx,%edx
+   100401fe2:	e8 89 00 00 00       	callq  100402070 <DllMain>
+   100401fe7:	85 c0                	test   %eax,%eax
+   100401fe9:	74 eb                	je     100401fd6 <_cygwin_dll_entry+0x36>
+   100401feb:	48 8b 0d 26 60 00 00 	mov    0x6026(%rip),%rcx        # 100408018 <dll_index>
+   100401ff2:	89 44 24 2c          	mov    %eax,0x2c(%rsp)
+   100401ff6:	e8 a5 00 00 00       	callq  1004020a0 <cygwin_detach_dll>
+   100401ffb:	48 c7 05 12 60 00 00 	movq   $0xffffffffffffffff,0x6012(%rip)        # 100408018 <dll_index>
+   100402002:	ff ff ff ff 
+   100402006:	8b 44 24 2c          	mov    0x2c(%rsp),%eax
+   10040200a:	eb ca                	jmp    100401fd6 <_cygwin_dll_entry+0x36>
+   10040200c:	0f 1f 40 00          	nopl   0x0(%rax)
+   100402010:	31 c0                	xor    %eax,%eax
+   100402012:	48 8d 15 67 ff ff ff 	lea    -0x99(%rip),%rdx        # 100401f80 <__dllMain>
+   100402019:	4d 85 c0             	test   %r8,%r8
+   10040201c:	0f 94 c0             	sete   %al
+   10040201f:	48 89 0d 0a 60 00 00 	mov    %rcx,0x600a(%rip)        # 100408030 <storedHandle>
+   100402026:	4c 89 05 f3 5f 00 00 	mov    %r8,0x5ff3(%rip)        # 100408020 <storedPtr>
+   10040202d:	c7 05 f1 5f 00 00 01 	movl   $0x1,0x5ff1(%rip)        # 100408028 <storedReason>
+   100402034:	00 00 00 
+   100402037:	89 05 d3 5f 00 00    	mov    %eax,0x5fd3(%rip)        # 100408010 <__dynamically_loaded>
+   10040203d:	e8 be 00 00 00       	callq  100402100 <cygwin_attach_dll>
+   100402042:	48 83 f8 ff          	cmp    $0xffffffffffffffff,%rax
+   100402046:	48 89 05 cb 5f 00 00 	mov    %rax,0x5fcb(%rip)        # 100408018 <dll_index>
+   10040204d:	0f 95 c0             	setne  %al
+   100402050:	0f b6 c0             	movzbl %al,%eax
+   100402053:	48 83 c4 38          	add    $0x38,%rsp
+   100402057:	c3                   	retq   
+   100402058:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+   10040205f:	00 
+
+0000000100402060 <_cygwin_noncygwin_dll_entry>:
+   100402060:	e9 3b ff ff ff       	jmpq   100401fa0 <_cygwin_dll_entry>
+   100402065:	90                   	nop
+   100402066:	90                   	nop
+   100402067:	90                   	nop
+   100402068:	90                   	nop
+   100402069:	90                   	nop
+   10040206a:	90                   	nop
+   10040206b:	90                   	nop
+   10040206c:	90                   	nop
+   10040206d:	90                   	nop
+   10040206e:	90                   	nop
+   10040206f:	90                   	nop
+
+0000000100402070 <DllMain>:
+   100402070:	b8 01 00 00 00       	mov    $0x1,%eax
+   100402075:	c3                   	retq   
+   100402076:	90                   	nop
+   100402077:	90                   	nop
+   100402078:	90                   	nop
+   100402079:	90                   	nop
+   10040207a:	90                   	nop
+   10040207b:	90                   	nop
+   10040207c:	90                   	nop
+   10040207d:	90                   	nop
+   10040207e:	90                   	nop
+   10040207f:	90                   	nop
+
+0000000100402080 <_pei386_runtime_relocator>:
+   100402080:	c3                   	retq   
+   100402081:	90                   	nop
+   100402082:	90                   	nop
+   100402083:	90                   	nop
+   100402084:	90                   	nop
+   100402085:	90                   	nop
+   100402086:	90                   	nop
+   100402087:	90                   	nop
+   100402088:	90                   	nop
+   100402089:	90                   	nop
+   10040208a:	90                   	nop
+   10040208b:	90                   	nop
+   10040208c:	90                   	nop
+   10040208d:	90                   	nop
+   10040208e:	90                   	nop
+   10040208f:	90                   	nop
+
+0000000100402090 <calloc>:
+   100402090:	ff 25 c2 70 00 00    	jmpq   *0x70c2(%rip)        # 100409158 <__imp_calloc>
+   100402096:	90                   	nop
+   100402097:	90                   	nop
+   100402098:	90                   	nop
+   100402099:	90                   	nop
+   10040209a:	90                   	nop
+   10040209b:	90                   	nop
+   10040209c:	90                   	nop
+   10040209d:	90                   	nop
+   10040209e:	90                   	nop
+   10040209f:	90                   	nop
+
+00000001004020a0 <cygwin_detach_dll>:
+   1004020a0:	ff 25 ba 70 00 00    	jmpq   *0x70ba(%rip)        # 100409160 <__imp_cygwin_detach_dll>
+   1004020a6:	90                   	nop
+   1004020a7:	90                   	nop
+   1004020a8:	90                   	nop
+   1004020a9:	90                   	nop
+   1004020aa:	90                   	nop
+   1004020ab:	90                   	nop
+   1004020ac:	90                   	nop
+   1004020ad:	90                   	nop
+   1004020ae:	90                   	nop
+   1004020af:	90                   	nop
+
+00000001004020b0 <cygwin_internal>:
+   1004020b0:	ff 25 b2 70 00 00    	jmpq   *0x70b2(%rip)        # 100409168 <__imp_cygwin_internal>
+   1004020b6:	90                   	nop
+   1004020b7:	90                   	nop
+   1004020b8:	90                   	nop
+   1004020b9:	90                   	nop
+   1004020ba:	90                   	nop
+   1004020bb:	90                   	nop
+   1004020bc:	90                   	nop
+   1004020bd:	90                   	nop
+   1004020be:	90                   	nop
+   1004020bf:	90                   	nop
+
+00000001004020c0 <free>:
+   1004020c0:	ff 25 b2 70 00 00    	jmpq   *0x70b2(%rip)        # 100409178 <__imp_free>
+   1004020c6:	90                   	nop
+   1004020c7:	90                   	nop
+   1004020c8:	90                   	nop
+   1004020c9:	90                   	nop
+   1004020ca:	90                   	nop
+   1004020cb:	90                   	nop
+   1004020cc:	90                   	nop
+   1004020cd:	90                   	nop
+   1004020ce:	90                   	nop
+   1004020cf:	90                   	nop
+
+00000001004020d0 <malloc>:
+   1004020d0:	ff 25 aa 70 00 00    	jmpq   *0x70aa(%rip)        # 100409180 <__imp_malloc>
+   1004020d6:	90                   	nop
+   1004020d7:	90                   	nop
+   1004020d8:	90                   	nop
+   1004020d9:	90                   	nop
+   1004020da:	90                   	nop
+   1004020db:	90                   	nop
+   1004020dc:	90                   	nop
+   1004020dd:	90                   	nop
+   1004020de:	90                   	nop
+   1004020df:	90                   	nop
+
+00000001004020e0 <posix_memalign>:
+   1004020e0:	ff 25 a2 70 00 00    	jmpq   *0x70a2(%rip)        # 100409188 <__imp_posix_memalign>
+   1004020e6:	90                   	nop
+   1004020e7:	90                   	nop
+   1004020e8:	90                   	nop
+   1004020e9:	90                   	nop
+   1004020ea:	90                   	nop
+   1004020eb:	90                   	nop
+   1004020ec:	90                   	nop
+   1004020ed:	90                   	nop
+   1004020ee:	90                   	nop
+   1004020ef:	90                   	nop
+
+00000001004020f0 <realloc>:
+   1004020f0:	ff 25 b2 70 00 00    	jmpq   *0x70b2(%rip)        # 1004091a8 <__imp_realloc>
+   1004020f6:	90                   	nop
+   1004020f7:	90                   	nop
+   1004020f8:	90                   	nop
+   1004020f9:	90                   	nop
+   1004020fa:	90                   	nop
+   1004020fb:	90                   	nop
+   1004020fc:	90                   	nop
+   1004020fd:	90                   	nop
+   1004020fe:	90                   	nop
+   1004020ff:	90                   	nop
+
+0000000100402100 <cygwin_attach_dll>:
+   100402100:	53                   	push   %rbx
+   100402101:	48 83 ec 20          	sub    $0x20,%rsp
+   100402105:	48 89 cb             	mov    %rcx,%rbx
+   100402108:	48 89 d1             	mov    %rdx,%rcx
+   10040210b:	48 8d 15 2e 5f 00 00 	lea    0x5f2e(%rip),%rdx        # 100408040 <u.54158>
+   100402112:	e8 99 fa ff ff       	callq  100401bb0 <_cygwin_crt0_common>
+   100402117:	48 8d 15 22 5f 00 00 	lea    0x5f22(%rip),%rdx        # 100408040 <u.54158>
+   10040211e:	48 89 d9             	mov    %rbx,%rcx
+   100402121:	48 83 c4 20          	add    $0x20,%rsp
+   100402125:	5b                   	pop    %rbx
+   100402126:	e9 05 00 00 00       	jmpq   100402130 <dll_dllcrt0>
+   10040212b:	90                   	nop
+   10040212c:	90                   	nop
+   10040212d:	90                   	nop
+   10040212e:	90                   	nop
+   10040212f:	90                   	nop
+
+0000000100402130 <dll_dllcrt0>:
+   100402130:	ff 25 3a 70 00 00    	jmpq   *0x703a(%rip)        # 100409170 <__imp_dll_dllcrt0>
+   100402136:	90                   	nop
+   100402137:	90                   	nop
+   100402138:	90                   	nop
+   100402139:	90                   	nop
+   10040213a:	90                   	nop
+   10040213b:	90                   	nop
+   10040213c:	90                   	nop
+   10040213d:	90                   	nop
+   10040213e:	90                   	nop
+   10040213f:	90                   	nop
+
+0000000100402140 <GetModuleHandleA>:
+   100402140:	ff 25 ca 70 00 00    	jmpq   *0x70ca(%rip)        # 100409210 <__imp_GetModuleHandleA>
+   100402146:	90                   	nop
+   100402147:	90                   	nop
+   100402148:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+   10040214f:	00 
+
+0000000100402150 <register_frame_ctor>:
+   100402150:	55                   	push   %rbp
+   100402151:	48 89 e5             	mov    %rsp,%rbp
+   100402154:	5d                   	pop    %rbp
+   100402155:	e9 f6 ee ff ff       	jmpq   100401050 <__gcc_register_frame>
+   10040215a:	90                   	nop
+   10040215b:	90                   	nop
+   10040215c:	90                   	nop
+   10040215d:	90                   	nop
+   10040215e:	90                   	nop
+   10040215f:	90                   	nop
+
+0000000100402160 <__CTOR_LIST__>:
+   100402160:	ff                   	(bad)  
+   100402161:	ff                   	(bad)  
+   100402162:	ff                   	(bad)  
+   100402163:	ff                   	(bad)  
+   100402164:	ff                   	(bad)  
+   100402165:	ff                   	(bad)  
+   100402166:	ff                   	(bad)  
+   100402167:	ff                   	.byte 0xff
+
+0000000100402168 <.ctors.65535>:
+   100402168:	50                   	push   %rax
+   100402169:	21 40 00             	and    %eax,0x0(%rax)
+   10040216c:	01 00                	add    %eax,(%rax)
+	...
+
+0000000100402178 <__DTOR_LIST__>:
+   100402178:	ff                   	(bad)  
+   100402179:	ff                   	(bad)  
+   10040217a:	ff                   	(bad)  
+   10040217b:	ff                   	(bad)  
+   10040217c:	ff                   	(bad)  
+   10040217d:	ff                   	(bad)  
+   10040217e:	ff                   	(bad)  
+   10040217f:	ff 00                	incl   (%rax)
+   100402181:	00 00                	add    %al,(%rax)
+   100402183:	00 00                	add    %al,(%rax)
+   100402185:	00 00                	add    %al,(%rax)
+	...

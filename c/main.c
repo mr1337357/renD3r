@@ -12,11 +12,12 @@ matrix4x4 movecube;
 
 void move_cube()
 {
-    movecube.x[0]=1;
-    movecube.y[1]=1;
-    movecube.z[2]=1;
-    movecube.w[3]=1;
-    movecube.z[3]=2.5;
+    matrix4x4_set(&movecube,0,0,1);
+    matrix4x4_set(&movecube,1,1,1);
+    matrix4x4_set(&movecube,2,2,1);
+    matrix4x4_set(&movecube,3,3,1);
+    matrix4x4_set(&movecube,3,2,1.5);
+    dump_matrix(&movecube);
 }
 
 void make_cube(vector4 *cube)
@@ -28,10 +29,10 @@ void make_cube(vector4 *cube)
     float w = 1.0;
     for(i=0;i<8;i++)
     {
-        cube[i].x = x+!!(i&1);
-        cube[i].y = y+!!(i&2);
-        cube[i].z = z+!!(i&4);
-        cube[i].w = w;
+        vector4_setx(&cube[i],x+!!(i&1));
+        vector4_sety(&cube[i],y+!!(i&2));
+        vector4_setz(&cube[i],z+!!(i&4));
+        vector4_setw(&cube[i],w);
     }
 }
 
@@ -74,11 +75,13 @@ void draw(unsigned char *pxbuf,int pitch)
     int y;
     for(i=0;i<8;i++)
     {
-
+        
         transform(&movecube,&cube[i],&n);
+        //printf("%f\n",vector4_getx(&n));
         project(&n);
-        x = n.x*320+320;
-        y = 240-n.y*240;
+        //printf("%f\n\n",vector4_getx(&n));
+        x = vector4_getx(&n)*320.0+320.0;
+        y = 240.0-vector4_gety(&n)*240.0;
         drawpixel(pxbuf,x,y,7,pitch);
     }
     //drawpixel(pxbuf,5,5,1,pitch);
