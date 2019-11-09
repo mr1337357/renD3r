@@ -9,6 +9,6 @@ class line:
             self.points.append(start)
             start += step
             
-    def getpoints(self):
+    def points(self):
         for point in self.points:
             yield point

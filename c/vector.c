@@ -3,29 +3,33 @@
 
 #ifdef FIXED
 
+#define FRACTIONBITS 13
+
+#define CONVERSIONFACTOR (1<<(FRACTIONBITS))
+
 #include "fixed.h"
 
 void vector4_setx(vector4 *v,float f)
 {
-    f*=16384;
+    f*=CONVERSIONFACTOR;
     v->x = f;
 }
 
 void vector4_sety(vector4 *v,float f)
 {
-    f*=16384;
+    f*=CONVERSIONFACTOR;
     v->y = f;
 }
 
 void vector4_setz(vector4 *v,float f)
 {
-    f*=16384;
+    f*=CONVERSIONFACTOR;
     v->z = f;
 }
 
 void vector4_setw(vector4 *v,float f)
 {
-    f*=16384;
+    f*=CONVERSIONFACTOR;
     v->w = f;
 }
 
@@ -33,7 +37,7 @@ float vector4_getx(vector4 *v)
 {
     float f;
     f = v->x;
-    return f/16384.0;
+    return f/CONVERSIONFACTOR;
 }
 
 float vector4_gety(vector4 *v)
@@ -41,12 +45,12 @@ float vector4_gety(vector4 *v)
     float f;
     f = v->y;
     
-    return f/16384.0;
+    return f/CONVERSIONFACTOR;
 } 
 
 void matrix4x4_set(matrix4x4 *m,int i, int j,float f)
 {
-    f *= 16384;
+    f *= CONVERSIONFACTOR;
     if(j==0)
     {
         m->x[i]=f;

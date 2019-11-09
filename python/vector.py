@@ -61,23 +61,19 @@ class matrix:
         return out
 
 class vector:
-    def __init__(self,x=0,y=0,z=0,color=0):
+    def __init__(self,x=0.0,y=0.0,z=0.0,w=1.0,color=0):
         self.x=x
         self.y=y
         self.z=z
+        self.w=w
         self.color = color
 
-    def topolar(self):
-        r = math.sqrt(x*x+y*y+z*z)
-        a = math.atan(self.y/self.x)
-        e = math.atan(self.z/self.x)
-
     def transform(self,matrix):
-        x = self.x*matrix[(0,0)]+self.y*matrix[(1,0)]+self.z*matrix[(2,0)]+1*matrix[(3,0)]
-        y = self.x*matrix[(0,1)]+self.y*matrix[(1,1)]+self.z*matrix[(2,1)]+1*matrix[(3,1)]
-        z = self.x*matrix[(0,2)]+self.y*matrix[(1,2)]+self.z*matrix[(2,2)]+1*matrix[(3,2)]
-        #_ = self.x*matrix[(3,0)]+self.y*matrix[(3,1)]+self.z*matrix[(3,2)]+1*matrix[(3,3)] #unnecessary output value thrown away
-        return vector(x,y,z)
+        x = self.x*matrix[(0,0)]+self.y*matrix[(1,0)]+self.z*matrix[(2,0)]+self.w*matrix[(3,0)]
+        y = self.x*matrix[(0,1)]+self.y*matrix[(1,1)]+self.z*matrix[(2,1)]+self.w*matrix[(3,1)]
+        z = self.x*matrix[(0,2)]+self.y*matrix[(1,2)]+self.z*matrix[(2,2)]+self.w*matrix[(3,2)]
+        w = self.x*matrix[(3,0)]+self.y*matrix[(3,1)]+self.z*matrix[(3,2)]+self.w*matrix[(3,3)]
+        return vector(x,y,z,w)
 
     def rasterize(self):
         if self.z <= 0:
@@ -95,7 +91,7 @@ class vector:
         return vector(self.x*factor,self.y*factor,self.z*factor)
         
     def __str__(self):
-        out = 'Vector: {},{},{}'.format(self.x,self.y,self.z)
+        out = 'Vector: {},{},{},{}'.format(self.x,self.y,self.z,self.w)
         return out
         
 if __name__ == '__main__':

@@ -16,7 +16,7 @@ void move_cube()
     matrix4x4_set(&movecube,1,1,1);
     matrix4x4_set(&movecube,2,2,1);
     matrix4x4_set(&movecube,3,3,1);
-    matrix4x4_set(&movecube,3,2,1.5);
+    matrix4x4_set(&movecube,3,2,2.5);
     dump_matrix(&movecube);
 }
 

@@ -42,12 +42,16 @@ def draw(pa):
         drawobj(pa,element)
 
 if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print 'No STL file present'
+        sys.exit(1)
+    filename = sys.argv[1]
     x = 0.0
     y = 0.0
     screen = pygame.display.set_mode((320,240))
     srf = pygame.Surface(screen.get_size(),0,screen)
 
-    elements.append(cube(0.3))
+    
     elements[0].moveto(vector(0.0,0.0,3.0))
 
     while True:
